@@ -1,0 +1,25 @@
+#footer{
+    color: white;
+    font-size:.8rem;
+    width: 100%;
+    text-align: center;
+}
+.footer-title{    
+background-color: #385B5F;
+text-align: center;
+padding-top:10px;
+
+}
+.footer-container{
+background-color: #385B5F;
+text-align: center;
+display: flex;
+justify-content: space-around;
+  
+}
+
+@media (max-width:500px){
+    .footer-container{
+        padding: 1rem;
+    }
+}

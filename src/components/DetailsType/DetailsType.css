@@ -1,0 +1,29 @@
+.detail-type{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding-top:5%
+    
+}
+.detail-type-name{
+    color:white;
+    font-weight: bold;
+    font-size:1.4em;
+    
+}
+
+.detail-type-container{
+    width:fit-content;
+    height:fit-content;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: lightcoral;
+    color:white;
+    border-radius: 2%;
+    text-align:center;
+    margin:3em;
+}
+.detail-type-comp{
+    padding-top:.4em;
+    font-size:1.2em
+}

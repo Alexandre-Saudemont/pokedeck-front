@@ -1,0 +1,21 @@
+.connexion-container{
+    flex-grow:1;
+    display: flex;
+    justify-content: center;
+    padding:3%;
+    padding-top:5%;
+}
+
+.connexion-title{
+    font-size: 2rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.connexion-subcontainer{
+    max-width: 12rem;
+}
+.connexion-input-label{
+    margin-top:1em;
+    text-align:center
+}
+

@@ -1,0 +1,57 @@
+/* .container {
+    display: flex;
+} */ 
+/* c'est quoi .container ?*/
+
+#profil{
+    padding:3%;
+    padding-top:5%;
+    flex-grow: 1;
+}
+.profil-card{
+    align-items:center;
+    justify-content: center;
+}
+
+.profil-title{
+    text-align: center;
+
+}
+
+.profil-user-info{
+    justify-content: center;
+}
+.profil-button{
+    text-align: center;
+}
+.profil-modal{
+    display: flex;
+}
+
+.profil-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    background-color: lightblue;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;    
+}
+
+.profil-form input{
+   text-align:center
+}
+.profil-form-input{
+    text-align: center!important
+}
+
+@media(max-width:500px){
+    #profil{
+        height: fit-content;
+    flex-grow: 1;
+    padding-top: 6rem;
+    }
+   
+}
