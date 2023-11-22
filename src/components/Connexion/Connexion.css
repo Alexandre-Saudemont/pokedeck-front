@@ -1,0 +1,26 @@
+.connexion-container {
+	background: url('/public/img/login.jpg') no-repeat center;
+	background-size: 100%;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	padding: 3%;
+	padding-top: 10%;
+}
+
+.connexion-title {
+	font-size: 2rem;
+	padding: 1rem 0 1rem 0;
+}
+
+.connexion-subcontainer {
+	max-width: 12rem;
+}
+.connexion-input-label {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.css-17ajtcg {
+	height: 20rem;
+}

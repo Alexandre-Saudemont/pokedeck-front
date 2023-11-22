@@ -1,0 +1,16 @@
+#types{
+    padding-top:4.5rem;
+    flex-grow:1
+}
+
+.types-pokemon{
+    height:80vh;
+    background: url("/public/img/background-types.png") no-repeat center;
+    background-size: 100%;
+    padding:3%;
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* background-color: rgb(45, 106, 180);  */
+}
