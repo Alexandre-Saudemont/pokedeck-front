@@ -14,6 +14,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const token = sessionStorage.getItem('token');
 	const [value, setValue] = useState('');
 	const [menuBurger, setMenuBurger] = useState(false);
+	const [searchVisible, setSearchVisible] = useState(false);
 
 	function handleBurger() {
 		setMenuBurger(!menuBurger);
@@ -26,6 +27,10 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		setIsLogged(false);
 		setSuccess('');
 		navigate('/');
+	}
+	function handleSearchClick() {
+		console.log('click', searchVisible);
+		setSearchVisible(!searchVisible);
 	}
 
 	useEffect(() => {
@@ -131,7 +136,12 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							</Typography>
 						</ThemeProvider>
 						<Button id='nav-search-responsive'>
-							<SearchIcon sx={{width: '2rem'}} />
+							<SearchIcon sx={{width: '2rem'}} onClick={handleSearchClick} />
+							{/* {searchVisible && (
+								<>
+									<Input className='' id='search' type='search' value={value} onChange={handleChange} placeholder='Rechercher...' />
+								</>
+							)} */}
 						</Button>
 					</div>
 					{menuBurger && (
@@ -184,9 +194,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 						</div>
 					)}
 					{isActive ? (
-						<div className='nav-element-right'>
-							<InputLabel htmlFor='search' />
-
+						<div className={`nav-element-right ${searchVisible ? 'nav-search-visible' : ''}`}>
 							<Input
 								sx={{display: 'inline-flex', paddingLeft: '2rem', width: '80%'}}
 								className='nav-search'
