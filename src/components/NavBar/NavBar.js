@@ -29,7 +29,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		navigate('/');
 	}
 	function handleSearchClick() {
-		console.log('click', searchVisible);
 		setSearchVisible(!searchVisible);
 	}
 

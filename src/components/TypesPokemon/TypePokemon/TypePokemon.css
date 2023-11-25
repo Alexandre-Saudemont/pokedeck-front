@@ -1,95 +1,109 @@
 .type-container {
-    margin: 1rem;
-    display: flex;
-    flex-direction: row;
-    width:22%;
-    justify-content: center
+	margin: 1rem;
+	display: flex;
+	flex-direction: row;
+	width: 22%;
+	justify-content: center;
 }
 
-.type-button{
-    cursor:pointer;
-    background-color:white;
-    width: 15rem;
-    height: 7.5rem;
-    font-size: 2rem;
-    border-radius: 1rem;
-    transition: all .1s ease-in;
+.type-button {
+	cursor: pointer;
+	background-color: white;
+	width: 15rem;
+	height: 7.5rem;
+	font-size: 2rem;
+	border-radius: 1rem;
+	transition: all 0.1s ease-in;
 }
 
-.types-title{
-    background-color:rgba(255, 204, 01);
-    padding:1.3rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color:rgb(45, 106, 180);    
-    -webkit-box-shadow: 0rem 0.625rem 0.70rem 0.75rem rgba(255, 204, 01, 0.876); 
-    box-shadow: 0rem 1rem 0rem  0rem rgba(255, 204, 01, 1);
-    margin-bottom: .8rem;
+.types-title {
+	background-color: rgba(255, 204, 01);
+	padding: 1.3rem;
+	font-size: 2rem;
+	font-weight: 700;
+	color: rgb(45, 106, 180);
+	-webkit-box-shadow: 0rem 0.625rem 0.7rem 0.75rem rgba(255, 204, 01, 0.876);
+	box-shadow: 0rem 1rem 0rem 0rem rgba(255, 204, 01, 1);
+	margin-bottom: 0.8rem;
 }
 
-.type-button-Feu:hover{
-    background-color: #ff4422;
-    color: rgba(255, 255, 255, 0.876)
+.type-button-Feu:hover {
+	background-color: #ff4422;
+	color: rgba(255, 255, 255, 0.876);
 }
 
 .type-button-Acier:hover {
-    background-color: #aaaabb;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #aaaabb;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Combat:hover {
-    background-color: #bb5544;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #bb5544;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Dragon:hover {
-    background-color: #7766ee;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #7766ee;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Eau:hover {
-    background-color: #3399ff;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #3399ff;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Electrik:hover {
-    background-color: #ffbb33;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #ffbb33;
+	color: rgba(255, 255, 255, 0.876);
 }
 
 .type-button-Glace:hover {
-    background-color: #77ddff;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #77ddff;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Insecte:hover {
-    background-color: #aabb22;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #aabb22;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Normal:hover {
-    background-color: #bbaabb;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #bbaabb;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Plante:hover {
-    background-color: #77cc55;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #77cc55;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Poison:hover {
-    background-color: #aa5599;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #aa5599;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Psy:hover {
-    background-color: #ff5599;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #ff5599;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Roche:hover {
-    background-color: #bbaa66;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #bbaa66;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Sol:hover {
-    background-color: #ddbb55;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #ddbb55;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Spectre:hover {
-    background-color: #6666bb;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #6666bb;
+	color: rgba(255, 255, 255, 0.876);
 }
 .type-button-Vol:hover {
-    background-color: #6699ff;
-    color: rgba(255, 255, 255, 0.876)
+	background-color: #6699ff;
+	color: rgba(255, 255, 255, 0.876);
+}
+
+@media screen and (max-width: 500px) {
+	.type-container {
+		width: 35%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.types-pokemon {
+		height: 100%;
+	}
 }
