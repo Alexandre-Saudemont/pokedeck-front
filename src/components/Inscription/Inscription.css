@@ -1,49 +1,65 @@
-.inscription-container{
-    background: url("/public/img/bg-inscription-2048.jpg") no-repeat center;
-    background-size:100%;
-    padding-top:4.5rem;
-    display: flex;
-    justify-content: center;
-    /* padding:3%; */
-    padding-top:5%;
-    flex-grow:1;
-    color:white;
+.inscription-container {
+	background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
+	background-size: 100%;
+	padding-top: 4.5rem;
+	display: flex;
+	justify-content: center;
+	/* padding:3%; */
+	padding-top: 5%;
+	flex-grow: 1;
+	color: white;
 }
-.inscription-box{
-    margin-left: 50%;
+.inscription-box {
+	margin-left: 50%;
 }
-.inscription-title{
-    font-size: 2rem;
-    padding: 1rem 0 1rem 0;
-}
-
-.inscription-modal{
-    display: flex;
- 
-}
-.inscription-input-label{
-    color:white!important;
-    margin-top: 1em;
-    text-align: center;
-}
-.inscription-input{
-    color:white!important;
-}
-#inscription-submit:hover{
-    background-color:white;
-
-}
-.inscription-swal-timer{
-    color: #3383D2
+.inscription-title {
+	font-size: 2rem;
+	padding: 1rem 0 1rem 0;
 }
 
-@media (max-width: 500PX){
-
-    .inscription-container{
-        margin-top: 10.5rem;
-        
-    }
+.inscription-modal {
+	display: flex;
+}
+.inscription-input-label {
+	color: white !important;
+	margin-top: 1em;
+	text-align: center;
+}
+.inscription-input {
+	color: white !important;
+}
+#inscription-submit:hover {
+	background-color: white;
+}
+.inscription-swal-timer {
+	color: #3383d2;
+}
+.MuiInputLabel-root {
+	color: white !important;
+	font-size: 1.2rem;
 }
 
+@media (max-width: 500px) {
+	.inscription-container {
+		background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		color: white;
+	}
+	.inscription-box {
+		font-size: 1.5rem !important;
+		background: rgba(0, 0, 0, 0.7); /* Couleur de fond avec transparence */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Ombre légère */
+		margin: 5rem 2rem 0 2rem;
+		height: 70%;
+	}
 
-
+	.MuiInputLabel-root {
+		font-size: 1.2rem !important;
+	}
+	.MuiButtonBase-root {
+		font-size: 1.1rem !important;
+		color: #ca1454 !important;
+	}
+}

@@ -31,11 +31,19 @@
 	margin: 1rem 0 1rem 0;
 }
 .css-ahj2mt-MuiTypography-root {
-	font-size: 1.1rem !important;
+	font-size: 1.5rem !important;
 	margin-top: 0.7rem !important;
 }
 .css-1l0uxqq-MuiTypography-root {
-	font-size: 0.9rem !important;
+	font-size: 1.5rem !important;
 }
+
 @media (max-width: 500px) {
+	.css-ahj2mt-MuiTypography-root {
+		font-size: 1.1rem !important;
+		margin-top: 0.7rem !important;
+	}
+	.css-1l0uxqq-MuiTypography-root {
+		font-size: 0.9rem !important;
+	}
 }
