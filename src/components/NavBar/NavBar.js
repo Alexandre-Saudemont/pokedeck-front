@@ -29,6 +29,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		navigate('/');
 	}
 	function handleSearchClick() {
+		console.log('click');
 		setSearchVisible(!searchVisible);
 	}
 
@@ -136,11 +137,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 						</ThemeProvider>
 						<Button id='nav-search-responsive'>
 							<SearchIcon sx={{width: '2rem'}} onClick={handleSearchClick} />
-							{/* {searchVisible && (
-								<>
-									<Input className='' id='search' type='search' value={value} onChange={handleChange} placeholder='Rechercher...' />
-								</>
-							)} */}
 						</Button>
 					</div>
 					{menuBurger && (

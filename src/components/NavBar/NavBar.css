@@ -134,7 +134,7 @@
 	#nav-search-responsive {
 		display: inline-grid;
 		transform: scale(1.6);
-		padding: 0.3rem 0 0 0.5rem;
+		padding: 0.3rem 0 0 0.8rem;
 	}
 	.nav-element-right {
 		display: none;
@@ -156,5 +156,13 @@
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 1rem;
+	}
+	/* Icon Menu burger */
+	.css-i4bv87-MuiSvgIcon-root {
+		fill: black !important;
+	}
+	/* Icon Search */
+	.css-wpwqg0-MuiSvgIcon-root {
+		fill: black !important;
 	}
 }

@@ -34,10 +34,10 @@
 .inscription-swal-timer {
 	color: #3383d2;
 }
-.MuiInputLabel-root {
+/* .MuiInputLabel-root {
 	color: white !important;
 	font-size: 1.2rem;
-}
+} */
 
 @media (max-width: 500px) {
 	.inscription-container {
@@ -49,17 +49,13 @@
 	}
 	.inscription-box {
 		font-size: 1.5rem !important;
-		background: rgba(0, 0, 0, 0.7); /* Couleur de fond avec transparence */
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Ombre légère */
-		margin: 5rem 2rem 0 2rem;
-		height: 70%;
+		background: rgba(0, 0, 0, 0.6); /* Couleur de fond avec transparence */
+		margin: 5rem 2rem 2rem 2rem;
+		height: 50%;
 	}
 
-	.MuiInputLabel-root {
-		font-size: 1.2rem !important;
-	}
-	.MuiButtonBase-root {
-		font-size: 1.1rem !important;
-		color: #ca1454 !important;
-	}
+	/* .inscription-title {
+		font-size: 1.5rem;
+		padding: 1rem 0 1rem 0;
+	} */
 }
