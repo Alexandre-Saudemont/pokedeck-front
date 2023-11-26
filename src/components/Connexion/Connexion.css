@@ -4,23 +4,77 @@
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
-	padding: 3%;
+	color: white !important;
 	padding-top: 10%;
 }
 
 .connexion-title {
 	font-size: 2rem;
 	padding: 1rem 0 1rem 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
 }
 
 .connexion-subcontainer {
-	max-width: 12rem;
+	background: rgba(0, 0, 0, 0.7);
+	height: 20rem;
+	width: 20rem;
 }
 .connexion-input-label {
-	margin-top: 1em;
+	margin-top: 2rem;
 	text-align: center;
+	color: white !important;
+	justify-content: center;
 }
 
 .css-17ajtcg {
 	height: 20rem;
+}
+
+.connexion-button-container {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.connexion-input {
+	color: white !important;
+}
+@media screen and (max-width: 500px) {
+	.connexion-container {
+		background: url('/public/img/login.jpg') no-repeat center;
+		background-size: cover;
+
+		justify-content: center;
+		color: white;
+		height: 20rem;
+	}
+	.connexion-subcontainer {
+		font-size: 1.5rem !important;
+		background: rgba(0, 0, 0, 0.7); /* Couleur de fond avec transparence */
+		margin: 7rem 0rem 2rem 0rem;
+		height: 20rem;
+		width: 20rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.connexion-title {
+		font-size: 2rem;
+		padding: 1rem 0 1rem 0;
+	}
+	.connexion-input-label {
+		margin-top: 1.5rem;
+		text-align: center;
+		color: white !important;
+	}
+
+	.connexion-button-container {
+		padding-top: 2rem;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+	}
 }

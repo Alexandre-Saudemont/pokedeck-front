@@ -13,11 +13,11 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 
-	const styleBox = {
-		bgcolor: 'lightgrey',
-		p: '2rem',
-		textAlign: 'center',
-	};
+	// const styleBox = {
+	// 	bgcolor: 'lightgrey',
+	// 	p: '2rem',
+	// 	textAlign: 'center',
+	// };
 	const timeOutFunction = () => {
 		navigate('/');
 	};
@@ -64,24 +64,38 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 
 	return (
 		<div className='connexion-container'>
-			<Box sx={styleBox}>
-				<div className='connexion-subcontainer'>
-					<h2 className='connexion-title'>Se connecter</h2>
-					<form action='submit' onSubmit={handleSubmit}>
-						<InputLabel htmlFor='email' className='connexion-input-label'>
-							Adresse Email
-						</InputLabel>
-						<Input type='email' name='email' value={email} placeholder='pikachu@gmail.com' onChange={(e) => setEmail(e.target.value)} />
-						<InputLabel htmlFor='password' className='connexion-input-label'>
-							Mot de passe
-						</InputLabel>
-						<Input type='password' name='password' value={password} placeholder='*******' onChange={(e) => setPassword(e.target.value)} />
-						<div>
-							<Button type='submit'>Envoyer</Button>
-						</div>
-					</form>
-				</div>
-			</Box>
+			{/* <Box sx={styleBox}> */}
+			<div className='connexion-subcontainer'>
+				<h2 className='connexion-title'>Se connecter</h2>
+				<form action='submit' onSubmit={handleSubmit}>
+					<InputLabel htmlFor='email' className='connexion-input-label'>
+						Adresse Email
+					</InputLabel>
+					<Input
+						className='connexion-input'
+						type='email'
+						name='email'
+						value={email}
+						placeholder='Bulbizarre@gmail.com'
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+					<InputLabel htmlFor='password' className='connexion-input-label'>
+						Mot de passe
+					</InputLabel>
+					<Input
+						className='connexion-input'
+						type='password'
+						name='password'
+						value={password}
+						placeholder='********'
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+					<div className='connexion-button-container'>
+						<Button type='submit'>Envoyer</Button>
+					</div>
+				</form>
+			</div>
+			{/* </Box> */}
 		</div>
 	);
 }

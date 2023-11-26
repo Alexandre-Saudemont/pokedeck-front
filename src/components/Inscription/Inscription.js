@@ -79,7 +79,7 @@ function Inscription({setIsActive}) {
 						type='text'
 						name='username'
 						value={username}
-						placeholder='Sacha le dresseur'
+						placeholder='SachaLeDresseur'
 						onChange={(e) => setUsername(e.target.value)}
 					/>
 					<InputLabel htmlFor='email' className='inscription-input-label'>
@@ -91,7 +91,7 @@ function Inscription({setIsActive}) {
 						type='email'
 						name='email'
 						value={email}
-						placeholder='pikachu@gmail.com'
+						placeholder='Pikachu@gmail.com'
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<InputLabel htmlFor='lastname' className='inscription-input-label'>
