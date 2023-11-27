@@ -1,6 +1,6 @@
 import './Footer.css';
 
-import {BottomNavigationAction, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 // import GitHubIcon from '@mui/icons-material/GitHub';
 // import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import github from '../../asset/github.svg';

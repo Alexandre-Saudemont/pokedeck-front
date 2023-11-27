@@ -38,9 +38,6 @@
 	color: white !important;
 	font-size: 1.2rem;
 } */
-.MuiButtonBase-root {
-	color: #ca1454 !important;
-}
 
 @media (max-width: 500px) {
 	.inscription-container {

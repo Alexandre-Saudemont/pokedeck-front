@@ -32,9 +32,11 @@
 .pokemon-title {
 	display: flex;
 }
+
 .pokemon-button {
 	padding-top: 0.3rem;
 }
+
 .pokemon-icon {
 	color: blue;
 	cursor: pointer;

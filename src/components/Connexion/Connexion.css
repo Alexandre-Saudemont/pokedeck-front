@@ -1,11 +1,12 @@
 .connexion-container {
 	background: url('/public/img/login.jpg') no-repeat center;
 	background-size: 100%;
+
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	color: white !important;
-	padding-top: 10%;
+	align-items: center;
 }
 
 .connexion-title {
@@ -17,9 +18,14 @@
 }
 
 .connexion-subcontainer {
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.4);
 	height: 20rem;
 	width: 20rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10%;
 }
 .connexion-input-label {
 	margin-top: 2rem;

@@ -127,7 +127,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 					</div>
 					<div className='nav-pokedex'>
 						<Button onClick={handleBurger} id='nav-burger'>
-							<MenuIcon />
+							<MenuIcon className='nav-burger-icon' />
 						</Button>
 						<img className='nav-logo' src='/img/pokeball.png' alt='logo pokeball' />
 						<ThemeProvider theme={theme}>
@@ -136,7 +136,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							</Typography>
 						</ThemeProvider>
 						<Button id='nav-search-responsive'>
-							<SearchIcon sx={{width: '2rem'}} onClick={handleSearchClick} />
+							<SearchIcon className='nav-burger-icon' sx={{width: '2rem'}} onClick={handleSearchClick} />
 						</Button>
 					</div>
 					{menuBurger && (
@@ -169,7 +169,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 										className='nav-menu'
 										type='button'
 										onClick={handleClick}>
-										Déconnexion
+										Se Déconnecter
 									</Button>
 								</>
 							) : (
