@@ -91,7 +91,9 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 					<div className='connexion-button-container'>
-						<Button type='submit'>Envoyer</Button>
+						<Button id='connexion-submit' type='submit'>
+							Envoyer
+						</Button>
 					</div>
 				</form>
 			</div>

@@ -1,5 +1,5 @@
 .connexion-container {
-	background: url('/public/img/login.jpg') no-repeat center;
+	background: url('/public/img/login calque.png') no-repeat center;
 	background-size: 100%;
 
 	flex-grow: 1;
@@ -18,20 +18,20 @@
 }
 
 .connexion-subcontainer {
-	background: rgba(0, 0, 0, 0.4);
 	height: 20rem;
 	width: 20rem;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 10%;
+	font-weight: 700;
 }
 .connexion-input-label {
 	margin-top: 2rem;
 	text-align: center;
 	color: white !important;
 	justify-content: center;
+	font-weight: 600 !important;
 }
 
 .css-17ajtcg {
@@ -45,9 +45,17 @@
 	align-items: center;
 }
 
+#connexion-submit {
+	color: #3383d2;
+	font-weight: 600 !important;
+}
+#connexion-submit:hover {
+	background-color: white;
+}
 .connexion-input {
 	color: white !important;
 }
+
 @media screen and (max-width: 500px) {
 	.connexion-container {
 		background: url('/public/img/login.jpg') no-repeat center;

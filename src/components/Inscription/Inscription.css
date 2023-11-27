@@ -15,6 +15,7 @@
 .inscription-title {
 	font-size: 2rem;
 	padding: 1rem 0 1rem 0;
+	font-weight: 700;
 }
 
 .inscription-modal {
@@ -24,6 +25,7 @@
 	color: white !important;
 	margin-top: 1em;
 	text-align: center;
+	font-weight: 600 !important;
 }
 .inscription-input {
 	color: white !important;
@@ -33,6 +35,10 @@
 }
 .inscription-swal-timer {
 	color: #3383d2;
+}
+#inscription-submit {
+	color: #3383d2;
+	font-weight: 600;
 }
 /* .MuiInputLabel-root {
 	color: white !important;
