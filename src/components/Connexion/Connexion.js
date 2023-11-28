@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import {LoginRequest, DeckRequest, saveAuthorization} from '../../requests';
 
 import './Connexion.css';
-import {Input, InputLabel, Button, Box} from '@mui/material';
+import {Input, InputLabel, Button} from '@mui/material';
 
 import Swal from 'sweetalert2';
 

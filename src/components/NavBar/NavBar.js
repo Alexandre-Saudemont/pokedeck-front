@@ -107,7 +107,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 									type='button'
 									onClick={handleClick}>
 									{' '}
-									<p className='nav-menu-connexion'>Se Déconnecter</p>
+									<p className='nav-menu-connexion'>Déconnexion</p>
 								</Button>
 							</>
 						) : (
@@ -119,7 +119,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 								{/* </Button> */}
 								{/* <Button sx={{ ":hover": { bgcolor: "lightblue" } }}> */}
 								<NavLink className='nav-menu nav-menu-connexion' to='/Connexion'>
-									Se Connecter
+									Connexion
 								</NavLink>
 								{/* </Button> */}
 							</>

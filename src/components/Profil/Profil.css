@@ -1,57 +1,88 @@
-/* .container {
-    display: flex;
-} */ 
-/* c'est quoi .container ?*/
-
-#profil{
-    padding:3%;
-    padding-top:5%;
-    flex-grow: 1;
+#profil {
+	background: url('../../../public/img/bg-types.png') center no-repeat;
+	background-size: 100%;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
 }
-.profil-card{
-    align-items:center;
-    justify-content: center;
-}
-
-.profil-title{
-    text-align: center;
-
+.profil-card {
+	align-items: center;
+	justify-content: center;
+	color: white !important;
+	background-color: transparent !important;
+	display: flex;
+	flex-direction: column;
 }
 
-.profil-user-info{
-    justify-content: center;
-}
-.profil-button{
-    text-align: center;
-}
-.profil-modal{
-    display: flex;
+.css-1qvr50w-MuiTypography-root {
+	font-weight: 700 !important;
 }
 
-.profil-form{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Noto Sans', sans-serif;
-    color: white;
-    background-color: lightblue;
-    justify-content: center;
-    margin: auto;
-    padding: 1rem;    
+.profil-infos {
+	font-weight: 600 !important;
 }
 
-.profil-form input{
-   text-align:center
+.profil-submit {
+	background: rgba(0, 0, 0, 0.6) !important;
+	margin: 0.5rem !important;
+	color: #3383d2;
+	font-weight: 700 !important;
 }
-.profil-form-input{
-    text-align: center!important
+.profil-submit:hover {
+	background-color: white !important;
 }
 
-@media(max-width:500px){
-    #profil{
-        height: fit-content;
-    flex-grow: 1;
-    padding-top: 6rem;
-    }
-   
+.profil-user-info {
+	justify-content: center;
+}
+.profil-button {
+	text-align: center;
+}
+.profil-modal {
+	display: flex;
+}
+
+.profil-form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Noto Sans', sans-serif;
+	background: rgba(26, 117, 150, 0.9) !important;
+	justify-content: center;
+	margin: auto;
+	padding: 1rem;
+	border-radius: 10%;
+}
+
+.profil-form-edit {
+	color: white !important;
+	padding-top: 1rem !important;
+}
+
+.profil-form-edit-input {
+	margin-bottom: 0.5rem;
+}
+
+.profil-form-edit-submit {
+	color: lightcoral !important;
+	font-weight: 600 !important;
+}
+.profil-form-edit-submit:hover {
+	background-color: white !important;
+}
+.profil-form input {
+	text-align: center;
+}
+.profil-form-input {
+	text-align: center !important;
+}
+
+@media (max-width: 500px) {
+	#profil {
+		height: fit-content;
+		flex-grow: 1;
+		padding-top: 6rem;
+	}
 }
