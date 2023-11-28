@@ -34,18 +34,14 @@ function Profil({setIsLogged, setIsActive}) {
 		navigate('/');
 	};
 
-	const timeOutFunctionProfil = () => {
-		navigate('/Profil');
-	};
-
 	const succesModification = () => {
 		Swal.fire({
 			icon: 'success',
 			text: 'Modification effectuée avec succès',
 			timerProgressBar: true,
 			showConfirmButton: false,
+			timer: 2000,
 		});
-		setTimeout(timeOutFunctionProfil, 2000);
 	};
 
 	async function requestInfoUser() {
@@ -67,28 +63,24 @@ function Profil({setIsLogged, setIsActive}) {
 			saveAuthorization(token);
 			const response = await UpdateUserRequest(id, data);
 			if (response.status === 200 && response.data.success) {
-				setSuccess(response.data.success);
 				setInfosUser((prevState) => ({
 					...prevState,
-					email,
-					username,
-					firstname,
-					lastname,
+					email: data.email,
+					username: data.username,
+					firstname: data.firstname,
+					lastname: data.lastname,
 				}));
+				setSuccess(response.data.success);
 				setError('');
 				handleClose();
-				return null;
+			} else {
+				setSuccess('');
+				setError(response.data.error);
 			}
-			setEmail(infosUser.email);
-			setFirstname(infosUser.firstname);
-			setLastname(infosUser.lastname);
-			setUsername(infosUser.username);
-			setError(response.data.error);
-			setError(response.data.error);
 		} catch (error) {
 			console.error(error);
-			setError(error.response.data.error);
 			setSuccess('');
+			setError(error.response.data.error);
 		}
 	}
 
