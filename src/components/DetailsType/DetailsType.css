@@ -8,8 +8,9 @@
 }
 .detail-type-name {
 	color: white;
-	font-weight: bold;
-	font-size: 1.4em;
+	font-weight: 700 !important;
+	font-size: 3rem;
+	padding-bottom: 1rem;
 }
 
 .detail-type-container {
@@ -22,6 +23,8 @@
 	border-radius: 2%;
 	text-align: center;
 	margin: 3em;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 .detail-type-comp {
 	padding-top: 0.4em;

@@ -31,14 +31,16 @@
 	color: white !important;
 }
 #inscription-submit:hover {
-	background-color: white;
+	background-color: yellow !important;
 }
 .inscription-swal-timer {
 	color: #3383d2;
 }
 #inscription-submit {
+	margin-top: 0.5rem;
 	color: #3383d2;
 	font-weight: 600;
+	background-color: white !important;
 }
 /* .MuiInputLabel-root {
 	color: white !important;

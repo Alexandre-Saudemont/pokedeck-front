@@ -25,13 +25,14 @@
 }
 
 .profil-submit {
-	background: rgba(0, 0, 0, 0.6) !important;
+	background-color: white !important;
 	margin: 0.5rem !important;
 	color: #3383d2;
 	font-weight: 700 !important;
 }
+
 .profil-submit:hover {
-	background-color: white !important;
+	background-color: yellow !important;
 }
 
 .profil-user-info {

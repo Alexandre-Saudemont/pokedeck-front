@@ -89,6 +89,9 @@ function Profil({setIsLogged, setIsActive}) {
 			icon: 'question',
 			title: 'Êtes-vous sûr de vouloir supprimer votre compte ?',
 			showCancelButton: true,
+			showCloseButton: true,
+			confirmButtonText: 'Oui, je suis sur',
+			cancelButtonText: 'Non, annuler',
 		})
 			.then(async (result) => {
 				if (result.isConfirmed) {

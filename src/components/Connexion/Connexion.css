@@ -48,9 +48,10 @@
 #connexion-submit {
 	color: #3383d2;
 	font-weight: 600 !important;
+	background-color: white !important;
 }
 #connexion-submit:hover {
-	background-color: white;
+	background-color: yellow !important;
 }
 .connexion-input {
 	color: white !important;
