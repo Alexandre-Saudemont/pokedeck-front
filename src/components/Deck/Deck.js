@@ -12,6 +12,8 @@ function Deck({setIsActive, setDeck, deck}) {
 
 	const styledelete = {
 		fontWeight: '700',
+		marginTop: '1rem',
+		marginBottom: '1rem',
 		'&:hover': {
 			backgroundColor: 'lightgrey',
 			color: 'green',
