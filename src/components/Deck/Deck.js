@@ -121,8 +121,8 @@ function Deck({setIsActive, setDeck, deck}) {
 					deck.map((pokemon) => (
 						<div key={pokemon.id} className='deck-pokemon'>
 							<p className='deck-pokemon-nom'>{pokemon.nom}</p>
-							<div className='deck-image'>
-								<img src={pokemon.url} alt={pokemon.nom}></img>
+							<div>
+								<img className='deck-pokemon-img' src={pokemon.url} alt={pokemon.nom}></img>
 								<Box className='deck-type-comp-container'>
 									<h3 className='deck-type-comp'>Pv : {pokemon.pv}</h3>
 									<h3 className='deck-type-comp'>Attaque : {pokemon.attaque}</h3>

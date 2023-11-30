@@ -66,3 +66,42 @@
 	font-size: 1.5rem;
 	color: white;
 }
+
+@media screen and (max-width: 500px) {
+	#deck-nodeck-text {
+		margin-top: 10%;
+		font-size: 1.5rem !important;
+	}
+	.deck-title {
+		margin-top: 20%;
+	}
+
+	.deck-container {
+		margin-bottom: 2rem;
+	}
+
+	.deck-button {
+		margin: 2rem 0 2rem 0;
+	}
+	.deck-pokemon-nom {
+		font-size: 2rem;
+	}
+
+	.deck-pokemon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 85%;
+		margin: 0 0 2rem 0;
+	}
+
+	.deck-pokemon-img {
+		width: 60%;
+		padding: 1.5rem 0 1.5rem 0;
+	}
+	.deck-type-comp {
+		padding: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+	}
+}
