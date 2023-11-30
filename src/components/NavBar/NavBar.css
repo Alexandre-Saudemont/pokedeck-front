@@ -23,6 +23,7 @@
 
 .nav-pokedex {
 	display: flex;
+	align-items: center;
 	width: 25rem;
 }
 #nav-search-responsive {
@@ -63,7 +64,6 @@
 	background-color: lightblue;
 }
 .nav-logo {
-	padding-top: 1em;
 	width: 2.5em;
 	height: 2.5em;
 }
@@ -123,8 +123,9 @@
 @media (max-width: 500px) {
 	#nav-burger {
 		display: inline;
-		padding: 0.3rem 1.5rem 0 0;
 		transform: scale(1.5);
+		margin-top: 3%;
+		width: 1rem;
 	}
 	#navbar-container-menu {
 		display: none;
@@ -136,6 +137,7 @@
 		display: inline-grid;
 		transform: scale(1.6);
 		padding: 0.3rem 0 0 0.8rem;
+		width: 100%;
 	}
 	.nav-element-right {
 		display: none;
@@ -144,9 +146,13 @@
 		flex-direction: column;
 	}
 	.nav-pokedex {
-		width: 100%;
+		width: 110%;
 	}
 
+	.nav-logo {
+		width: 2rem;
+		height: 2rem;
+	}
 	#navbar-container-menu-burger {
 		display: block;
 	}

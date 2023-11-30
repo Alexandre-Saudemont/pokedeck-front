@@ -16,9 +16,10 @@
 }
 
 .deck-title {
-	font-weight: bolder;
+	font-weight: 700 !important;
 	padding-bottom: 3%;
 	text-align: center;
+	font-size: 2rem;
 }
 
 .deck-button {

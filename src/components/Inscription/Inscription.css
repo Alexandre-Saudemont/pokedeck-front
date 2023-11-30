@@ -60,6 +60,7 @@
 		background: rgba(0, 0, 0, 0.6); /* Couleur de fond avec transparence */
 		margin: 5rem 2rem 2rem 2rem;
 		height: 50%;
+		border-radius: 5%;
 	}
 
 	/* .inscription-title {

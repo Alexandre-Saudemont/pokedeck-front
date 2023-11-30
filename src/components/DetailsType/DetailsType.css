@@ -26,7 +26,35 @@
 	font-size: 1.5rem;
 	font-weight: bold;
 }
+
 .detail-type-comp {
 	padding-top: 0.4em;
 	font-size: 1.2em;
+}
+
+@media screen and (max-width: 500px) {
+	.detail-type {
+		margin-top: 5rem;
+	}
+	.detail-type-container {
+		background: rgba(212, 61, 61, 0.6);
+		font-size: 2rem !important;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 2rem 2rem 0 2rem !important;
+	}
+	.detail-type-name {
+		font-size: 2rem !important;
+	}
+
+	.detail-type-img {
+		width: 60%;
+		padding: 2rem 0 2rem 0;
+	}
+	.detail-type-comp {
+		padding-top: 0.4em;
+		font-size: 1.3rem;
+	}
 }
