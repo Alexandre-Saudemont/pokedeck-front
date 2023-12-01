@@ -82,8 +82,20 @@
 
 @media (max-width: 500px) {
 	#profil {
+		background: url('../../../public/img/bg-types.png') center no-repeat;
+		background-size: cover;
 		height: fit-content;
 		flex-grow: 1;
 		padding-top: 6rem;
+	}
+
+	.profil-card {
+		align-items: center;
+		justify-content: center;
+		color: white !important;
+		background-color: transparent !important;
+		display: flex;
+		flex-direction: column;
+		box-shadow: none !important;
 	}
 }

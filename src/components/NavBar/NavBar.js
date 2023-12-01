@@ -4,7 +4,7 @@ import {PokemonRequest} from '../../requests';
 
 import './NavBar.css';
 
-import {AppBar, Toolbar, Input, InputLabel, Button, Typography} from '@mui/material';
+import {AppBar, Toolbar, Input, Button, Typography} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';

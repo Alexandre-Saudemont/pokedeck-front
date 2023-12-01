@@ -64,6 +64,9 @@ function Inscription({setIsActive}) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[],
 	);
+	useEffect(() => {
+		setIsActive(false);
+	}, [setIsActive]);
 
 	return (
 		<div className='inscription-container'>
