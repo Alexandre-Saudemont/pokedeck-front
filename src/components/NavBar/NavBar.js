@@ -135,9 +135,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 								Pokedeck
 							</Typography>
 						</ThemeProvider>
-						<Button id='nav-search-responsive'>
-							<SearchIcon className='nav-burger-icon' sx={{width: '2rem'}} onClick={handleSearchClick} />
-						</Button>
+						{isActive && (
+							<Button id='nav-search-responsive'>
+								<SearchIcon className='nav-burger-icon' sx={{width: '2rem'}} onClick={handleSearchClick} />
+							</Button>
+						)}
 					</div>
 					{menuBurger && (
 						<div id='navbar-container-menu-burger'>
