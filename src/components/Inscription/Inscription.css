@@ -54,13 +54,15 @@
 		display: flex;
 		justify-content: center;
 		color: white;
+		align-items: center;
 	}
 	.inscription-box {
 		font-size: 1.5rem !important;
 		background: rgba(0, 0, 0, 0.6); /* Couleur de fond avec transparence */
-		margin: 5rem 2rem 2rem 2rem;
-		height: 50%;
+		margin: auto;
+
 		border-radius: 5%;
+		width: 60%;
 	}
 
 	/* .inscription-title {
