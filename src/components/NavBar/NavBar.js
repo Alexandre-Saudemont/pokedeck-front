@@ -167,11 +167,13 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 										</NavLink>
 									</Button>
 									<Button
-										sx={{':hover': {bgcolor: 'lightblue', fontFamily: 'Segeo UI'}}}
-										className='nav-menu'
+										sx={{
+											':hover': {bgcolor: 'lightblue', fontFamily: 'Segeo UI'},
+										}}
+										className='nav-menu-disconnect-button'
 										type='button'
 										onClick={handleClick}>
-										Se Déconnecter
+										Déconnexion
 									</Button>
 								</>
 							) : (

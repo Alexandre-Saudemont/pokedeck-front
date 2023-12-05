@@ -70,3 +70,41 @@
 		padding: 1rem 0 1rem 0;
 	} */
 }
+
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+	.inscription-container {
+		background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		color: white;
+		align-items: center;
+	}
+	.inscription-box {
+		font-size: 1.5rem !important;
+		background: rgba(0, 0, 0, 0.6); /* Couleur de fond avec transparence */
+		margin: auto;
+
+		border-radius: 5%;
+	}
+
+	.inscription-title {
+		font-size: 2rem;
+		padding: 1rem 0 1rem 0;
+	}
+
+	.inscription-input {
+		color: white !important;
+
+		text-align: center;
+		font-size: 1.3rem !important;
+	}
+
+	.inscription-input-label {
+		color: white !important;
+		margin-top: 1rem;
+		text-align: center;
+		font-weight: 700 !important;
+		font-size: 1.5rem !important;
+	}
+}

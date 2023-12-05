@@ -94,3 +94,42 @@
 		align-items: center;
 	}
 }
+
+@media screen and (min-width: 501px) and (max-width: 1024px) {
+	.connexion-container {
+		background: url('/public/img/login.jpg') no-repeat center;
+		background-size: cover;
+
+		justify-content: center;
+		color: white;
+		height: 20rem;
+	}
+	.connexion-subcontainer {
+		font-size: 1.5rem !important;
+		background: rgba(0, 0, 0, 0.7); /* Couleur de fond avec transparence */
+		margin: 7rem 0rem 2rem 0rem;
+		height: 23rem;
+		width: 23rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 5%;
+	}
+	.connexion-title {
+		font-size: 3rem;
+		padding: 1rem 0 1rem 0;
+	}
+	.connexion-input-label {
+		margin-top: 1.5rem;
+		text-align: center;
+		color: white !important;
+		font-size: 1.5rem !important;
+	}
+
+	.connexion-button-container {
+		padding-top: 2rem;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+	}
+}

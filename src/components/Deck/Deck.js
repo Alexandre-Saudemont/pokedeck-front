@@ -112,7 +112,7 @@ function Deck({setIsActive, setDeck, deck}) {
 				</p>
 			) : (
 				<div className='deck-button'>
-					<Button sx={styledelete} justify='center' onClick={handleDeleteDeck}>
+					<Button className='deck-reset-button' sx={styledelete} justify='center' onClick={handleDeleteDeck}>
 						Réinitaliser mon deck
 					</Button>
 				</div>
@@ -135,6 +135,7 @@ function Deck({setIsActive, setDeck, deck}) {
 								</Box>
 							</div>
 							<Button
+								className='deck-reset-button'
 								sx={styledelete}
 								onClick={(e) => {
 									e.target.name = pokemon.nom;
