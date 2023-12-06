@@ -43,7 +43,7 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 		<>
 			<div className='pokemons'>
 				{pokedex.length > 0 &&
-					pokedex.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} isLogged={isLogged} setDeck={setDeck} deck={deck} />)}
+					pokedex?.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} isLogged={isLogged} setDeck={setDeck} deck={deck} />)}
 			</div>
 		</>
 	);
