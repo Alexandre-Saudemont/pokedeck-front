@@ -50,7 +50,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 			const response = await PokemonRequest();
 			const searchPokemonFiltered = response.data.filter((pokemon) => {
 				const pokemonToLowerCase = pokemon.nom.toLowerCase();
-				return pokemonToLowerCase.includes(pokemonSearched);
+				return pokemonToLowerCase.includes(pokemonSearched.toLowerCase());
 			});
 
 			setPokedex(searchPokemonFiltered);

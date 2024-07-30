@@ -4,6 +4,16 @@ const axiosInstance = axios.create({
 	baseURL: `${process.env.REACT_APP_BASE_URL}`,
 });
 
+export async function PokedexRequest() {
+	const response = await axiosInstance.get('/Pokedex');
+
+	return response.data.map((pokemon) => ({
+		id: pokemon.id,
+		nom: pokemon.nom,
+		types: pokemon.types,
+	}));
+}
+
 export function PokemonRequest() {
 	const response = axiosInstance.get('/Pokemon');
 	return response;

@@ -27,69 +27,69 @@
 	margin-bottom: 0.8rem;
 }
 
-.type-button-Feu:hover {
+.type-button-Feu {
 	background-color: #ff4422;
 	color: rgba(255, 255, 255, 0.876);
 }
 
-.type-button-Acier:hover {
+.type-button-Acier {
 	background-color: #aaaabb;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Combat:hover {
+.type-button-Combat {
 	background-color: #bb5544;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Dragon:hover {
+.type-button-Dragon {
 	background-color: #7766ee;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Eau:hover {
+.type-button-Eau {
 	background-color: #3399ff;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Electrik:hover {
+.type-button-Electrik {
 	background-color: #ffbb33;
 	color: rgba(255, 255, 255, 0.876);
 }
 
-.type-button-Glace:hover {
+.type-button-Glace {
 	background-color: #77ddff;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Insecte:hover {
+.type-button-Insecte {
 	background-color: #aabb22;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Normal:hover {
+.type-button-Normal {
 	background-color: #bbaabb;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Plante:hover {
+.type-button-Plante {
 	background-color: #77cc55;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Poison:hover {
+.type-button-Poison {
 	background-color: #aa5599;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Psy:hover {
+.type-button-Psy {
 	background-color: #ff5599;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Roche:hover {
+.type-button-Roche {
 	background-color: #bbaa66;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Sol:hover {
+.type-button-Sol {
 	background-color: #ddbb55;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Spectre:hover {
+.type-button-Spectre {
 	background-color: #6666bb;
 	color: rgba(255, 255, 255, 0.876);
 }
-.type-button-Vol:hover {
+.type-button-Vol {
 	background-color: #6699ff;
 	color: rgba(255, 255, 255, 0.876);
 }
