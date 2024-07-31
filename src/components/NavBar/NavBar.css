@@ -42,7 +42,7 @@
 	/* z-index:99;
     position:fixed;
     width:100%; */
-	background-color: #ca1454;
+	background-color: lightcoral;
 	justify-content: space-between;
 }
 
@@ -68,6 +68,9 @@
 	height: 2.5em;
 }
 
+.nav-pokedeck-icon {
+	width: 15rem;
+}
 .nav-element-right-empty {
 	width: 8.3vw;
 }
@@ -137,7 +140,7 @@
 		display: inline-grid;
 		transform: scale(1.6);
 		padding: 0.3rem 0 0 0.8rem;
-		width: 100%;
+		width: 100%1;
 	}
 	.nav-element-right {
 		display: none;

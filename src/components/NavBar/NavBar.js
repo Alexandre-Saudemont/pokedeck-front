@@ -4,10 +4,11 @@ import {PokemonRequest} from '../../requests';
 
 import './NavBar.css';
 
-import {AppBar, Toolbar, Input, Button, Typography} from '@mui/material';
+import {AppBar, Toolbar, Input, Button} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import PokedexLogo from '../../asset/Pokedeck-logo.gif';
 
 function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const navigate = useNavigate();
@@ -129,11 +130,9 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 						<Button onClick={handleBurger} id='nav-burger'>
 							<MenuIcon className='nav-burger-icon' />
 						</Button>
-						<img className='nav-logo' src='/img/pokeball.png' alt='logo pokeball' />
+
 						<ThemeProvider theme={theme}>
-							<Typography variant='h2' id='nav-pokedex-typo'>
-								Pokedeck
-							</Typography>
+							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
 						</ThemeProvider>
 						{isActive && (
 							<Button id='nav-search-responsive'>
