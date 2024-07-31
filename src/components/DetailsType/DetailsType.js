@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useLocation} from 'react-router-dom';
-import {addPokemonToDeck, saveAuthorization, deletePokemon, DeckRequest} from '../../requests/index.js';
+import {PokedexRequest, addPokemonToDeck, saveAuthorization, deletePokemon, DeckRequest} from '../../requests/index.js';
 
 import './DetailsType.css';
 
@@ -8,11 +8,14 @@ import {Box, Button} from '@mui/material';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import Swal from 'sweetalert2';
+import pokemonTypeColors from '../../constants/PokemonTypeColors.js';
 
 function DetailsType({isLogged, deck, setDeck}) {
 	const {state} = useLocation();
 	const UserId = localStorage.getItem('id');
 	const token = sessionStorage.getItem('token');
+
+	const [backgroundStyles, setBackgroundStyles] = useState({});
 
 	async function requestForDeck() {
 		try {
@@ -65,22 +68,49 @@ function DetailsType({isLogged, deck, setDeck}) {
 			console.error(error);
 		}
 	}
-	useEffect(
-		() => {
-			if (UserId) {
-				requestForDeck();
-			}
-		},
+
+	useEffect(() => {
+		if (UserId) {
+			requestForDeck();
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[deck],
-	);
+	}, [deck]);
+
+	const getTypeBackgroundStyle = (types) => {
+		const typesColors = types.map((type) => pokemonTypeColors[type]);
+		const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`];
+		return `linear-gradient(to right, ${gradientColors.join(', ')})`;
+	};
+
+	useEffect(() => {
+		async function fetchPokemonData() {
+			try {
+				const typesData = await PokedexRequest();
+				const updatedBackgroundStyles = {};
+
+				state.data.forEach((pokemon) => {
+					const matchedPokemon = typesData.find((p) => p.id === pokemon.id);
+					if (matchedPokemon) {
+						const backgroundStyle = getTypeBackgroundStyle(matchedPokemon.types);
+						updatedBackgroundStyles[pokemon.id] = {backgroundImage: backgroundStyle};
+					}
+				});
+				setBackgroundStyles(updatedBackgroundStyles);
+			} catch (error) {
+				console.error('Failed to fetch pokemon types:', error);
+			}
+		}
+		fetchPokemonData();
+	}, [state.data]);
 
 	return (
 		<div className='detail-type'>
 			{state.data.map((data) => (
-				<div className='detail-type-container' key={data.id}>
-					<h2 className='detail-type-name'> {data.nom}</h2>
-					<img src={data.url} className='detail-type-img' alt='pokemon' />
+				<div className='detail-type-container' key={data.id} style={backgroundStyles[data.id]}>
+					<h2 className='detail-type-name'>{data.nom}</h2>
+					<div className='detail-type-image-container'>
+						<img src={data.url} className='detail-type-img' alt='pokemon' />
+					</div>
 					<Box>
 						<h3 className='detail-type-comp'>Pv : {data.pv}</h3>
 						<h3 className='detail-type-comp'>Attaque : {data.attaque}</h3>
