@@ -1,9 +1,8 @@
+import React from 'react';
 import {useEffect, useState} from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {PokemonRequest} from '../../requests';
-
 import './NavBar.css';
-
 import {AppBar, Toolbar, Input, Button} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';

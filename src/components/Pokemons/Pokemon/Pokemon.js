@@ -1,8 +1,7 @@
+import React from 'react';
 import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-
 import {PokedexRequest, PokemonRequestByID, addPokemonToDeck, saveAuthorization, deletePokemon, DeckRequest} from '../../../requests/index.js';
-
 import './Pokemon.css';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';

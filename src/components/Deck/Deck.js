@@ -1,3 +1,4 @@
+import React from 'react';
 import {PokedexRequest, DeckRequest, saveAuthorization, deleteAllPokemons, deletePokemon} from '../../requests';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';

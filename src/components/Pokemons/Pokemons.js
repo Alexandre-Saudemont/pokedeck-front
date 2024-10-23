@@ -1,3 +1,4 @@
+import React from 'react';
 import {useEffect} from 'react';
 import {PokemonRequest, DeckRequest, saveAuthorization} from '../../requests/index.js';
 import Pokemon from './Pokemon/Pokemon.js';

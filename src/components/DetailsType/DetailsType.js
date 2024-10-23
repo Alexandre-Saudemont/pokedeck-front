@@ -1,9 +1,8 @@
+import React from 'react';
 import {useEffect, useState} from 'react';
 import {useLocation} from 'react-router-dom';
 import {PokedexRequest, addPokemonToDeck, saveAuthorization, deletePokemon, DeckRequest} from '../../requests/index.js';
-
 import './DetailsType.css';
-
 import {Box, Button} from '@mui/material';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';

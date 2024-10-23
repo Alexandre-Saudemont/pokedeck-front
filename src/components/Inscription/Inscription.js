@@ -1,9 +1,8 @@
+import React from 'react';
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {RegisterRequest} from '../../requests';
-
 import './Inscription.css';
-
 import {FormHelperText, InputLabel, Input, Box, Button} from '@mui/material';
 import Swal from 'sweetalert2';
 
