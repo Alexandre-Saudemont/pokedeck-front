@@ -132,7 +132,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 						</Button>
 
 						<ThemeProvider theme={theme}>
-							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
+							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' onClick={() => navigate('/')} />
 						</ThemeProvider>
 						{isActive && (
 							<Button id='nav-search-responsive'>
