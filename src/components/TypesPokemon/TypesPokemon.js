@@ -1,4 +1,3 @@
-import React from 'react';
 import {useState, useEffect} from 'react';
 import {TypesRequest, DeckRequest, saveAuthorization} from '../../requests';
 import TypePokemon from './TypePokemon/TypePokemon.js';

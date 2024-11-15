@@ -1,9 +1,11 @@
-import React from 'react';
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+
 import {LoginRequest, DeckRequest, saveAuthorization} from '../../requests';
+
 import './Connexion.css';
 import {Input, InputLabel, Button} from '@mui/material';
+
 import Swal from 'sweetalert2';
 
 function Connexion({setIsLogged, setIsActive, setDeck}) {

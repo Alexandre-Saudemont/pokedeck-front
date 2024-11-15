@@ -1,17 +1,14 @@
-import React from 'react';
 import {useEffect, useState} from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {PokemonRequest} from '../../requests';
+
 import './NavBar.css';
+
 import {AppBar, Toolbar, Input, Button} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-<<<<<<< HEAD
 import PokedexLogo from '../../asset/Pokedeck-logo.gif';
-=======
-import PokedexLogo from '../../asset/PokedeckLogo.png';
->>>>>>> 838a6dc (first commit V2)
 
 function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const navigate = useNavigate();
@@ -135,7 +132,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 						</Button>
 
 						<ThemeProvider theme={theme}>
-							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' onClick={() => navigate('/')} />
+							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
 						</ThemeProvider>
 						{isActive && (
 							<Button id='nav-search-responsive'>
