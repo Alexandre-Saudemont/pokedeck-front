@@ -1,6 +1,10 @@
 import {useState, useEffect} from 'react';
 import {Route, Routes} from 'react-router-dom';
+<<<<<<< HEAD
 
+=======
+import React from 'react';
+>>>>>>> 838a6dc (first commit V2)
 import Pokemons from './components/Pokemons/Pokemons.js';
 import DetailsPokemon from './components/DetailsPokemon/DetailsPokemon.js';
 import TypesPokemon from './components/TypesPokemon/TypesPokemon.js';

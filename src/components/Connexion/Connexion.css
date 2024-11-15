@@ -1,5 +1,9 @@
 .connexion-container {
+<<<<<<< HEAD
 	background: url('/public/img/login calque.png') no-repeat center;
+=======
+	background: url('../../../public/img/login\ calque.png') no-repeat center;
+>>>>>>> 838a6dc (first commit V2)
 	background-size: 100%;
 
 	flex-grow: 1;
@@ -59,7 +63,11 @@
 
 @media screen and (max-width: 500px) {
 	.connexion-container {
+<<<<<<< HEAD
 		background: url('/public/img/login.jpg') no-repeat center;
+=======
+		background: url('../../../public/img/login\ calque.png') no-repeat center;
+>>>>>>> 838a6dc (first commit V2)
 		background-size: cover;
 
 		justify-content: center;
@@ -97,7 +105,11 @@
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
 	.connexion-container {
+<<<<<<< HEAD
 		background: url('/public/img/login.jpg') no-repeat center;
+=======
+		background: url('../../../public/img/login\ calque.png') no-repeat center;
+>>>>>>> 838a6dc (first commit V2)
 		background-size: cover;
 
 		justify-content: center;

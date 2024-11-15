@@ -16,12 +16,20 @@ function Footer() {
 				<Typography>
 					Adam Gaoua
 					<div className='footer-icon--container'>
+<<<<<<< HEAD
 						<a href='https://www.linkedin.com/in/adam-gaoua-05092b238/' target='_blank' rel='noreferrer'>
+=======
+						<a href='https://www.linkedin.com/in/adam-gaoua-05092b238/' target='_blank' rel='noopener noreferrer'>
+>>>>>>> 838a6dc (first commit V2)
 							<span>
 								<img src={linkedin} alt='linkedin icon' className='footer-linkedin' />
 							</span>
 						</a>
+<<<<<<< HEAD
 						<a href='https://github.com/AdamGaoua' target='_blank' rel='noreferrer'>
+=======
+						<a href='https://github.com/AdamGaoua' target='_blank' rel='noopener noreferrer'>
+>>>>>>> 838a6dc (first commit V2)
 							<span>
 								<img src={github} alt='linkedin icon' className='footer-github' />
 							</span>
@@ -31,12 +39,20 @@ function Footer() {
 				<Typography>
 					Alexandre Saudemont
 					<div className='footer-icon--container'>
+<<<<<<< HEAD
 						<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noreferrer'>
+=======
+						<a href='https://www.linkedin.com/in/alexandre-saudemont-535481239/' target='_blank' rel='noopener noreferrer'>
+>>>>>>> 838a6dc (first commit V2)
 							<span>
 								<img src={linkedin} alt='linkedin icon' className='footer-linkedin' />
 							</span>
 						</a>
+<<<<<<< HEAD
 						<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noreferrer'>
+=======
+						<a href='https://github.com/Alexandre-Saudemont' target='_blank' rel='noopener noreferrer'>
+>>>>>>> 838a6dc (first commit V2)
 							<span>
 								<img src={github} alt='linkedin icon' className='footer-github' />
 							</span>

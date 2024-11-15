@@ -70,6 +70,14 @@
 
 .nav-pokedeck-icon {
 	width: 13rem;
+<<<<<<< HEAD
+=======
+	transition: transform 0.5s ease-in;
+}
+
+.nav-pokedeck-icon:hover {
+	transform: scale(1.1);
+>>>>>>> 838a6dc (first commit V2)
 }
 .nav-element-right-empty {
 	width: 8.3vw;

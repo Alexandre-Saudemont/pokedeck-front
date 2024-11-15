@@ -7,7 +7,11 @@ import {AppBar, Toolbar, Input, Button} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+<<<<<<< HEAD
 import PokedexLogo from '../../asset/Pokedeck-logo.gif';
+=======
+import PokedexLogo from '../../asset/PokedeckLogo.png';
+>>>>>>> 838a6dc (first commit V2)
 
 function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const navigate = useNavigate();
