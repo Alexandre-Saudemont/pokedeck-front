@@ -12,9 +12,10 @@ function TypePokemon({id, nom}) {
 	}
 	return (
 		<div className='type-container'>
-			<button className={`type-button type-button-${nom}`} value={id} onClick={handleClick}>
+			<div className={`type-button type-button-${nom}`}>
+				<img className={`type-button type-button-${nom}`} value={id} src={`/assets/${nom}.png`} alt={`${nom}`} onClick={handleClick} />
 				{nom}
-			</button>
+			</div>
 		</div>
 	);
 }

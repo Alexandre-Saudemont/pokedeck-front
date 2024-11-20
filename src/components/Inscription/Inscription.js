@@ -57,13 +57,9 @@ function Inscription({setIsActive}) {
 			});
 		}
 	}
-	useEffect(
-		() => {
-			setIsActive(false);
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[],
-	);
+	useEffect(() => {
+		setIsActive(false);
+	}, []);
 	useEffect(() => {
 		setIsActive(false);
 	}, [setIsActive]);
@@ -73,30 +69,6 @@ function Inscription({setIsActive}) {
 			<Box sx={styleBox} className='inscription-box'>
 				<h2 className='inscription-title'>Formulaire d'inscription</h2>
 				<form action='submit' onSubmit={handleSubmit}>
-					<InputLabel htmlFor='username' className='inscription-input-label'>
-						Pseudo
-					</InputLabel>
-					<Input
-						className='inscription-input'
-						id='username'
-						type='text'
-						name='username'
-						value={username}
-						placeholder='SachaLeDresseur'
-						onChange={(e) => setUsername(e.target.value)}
-					/>
-					<InputLabel htmlFor='email' className='inscription-input-label'>
-						Adresse Email
-					</InputLabel>
-					<Input
-						className='inscription-input'
-						id='email'
-						type='email'
-						name='email'
-						value={email}
-						placeholder='Pikachu@gmail.com'
-						onChange={(e) => setEmail(e.target.value)}
-					/>
 					<InputLabel htmlFor='lastname' className='inscription-input-label'>
 						Nom
 					</InputLabel>
@@ -120,6 +92,30 @@ function Inscription({setIsActive}) {
 						value={firstname}
 						placeholder='Jean-Eude'
 						onChange={(e) => setFirstname(e.target.value)}
+					/>
+					<InputLabel htmlFor='username' className='inscription-input-label'>
+						Pseudo
+					</InputLabel>
+					<Input
+						className='inscription-input'
+						id='username'
+						type='text'
+						name='username'
+						value={username}
+						placeholder='SachaLeDresseur'
+						onChange={(e) => setUsername(e.target.value)}
+					/>
+					<InputLabel htmlFor='email' className='inscription-input-label'>
+						Adresse Email
+					</InputLabel>
+					<Input
+						className='inscription-input'
+						id='email'
+						type='email'
+						name='email'
+						value={email}
+						placeholder='Pikachu@gmail.com'
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<InputLabel htmlFor='password' className='inscription-input-label'>
 						Mot de passe

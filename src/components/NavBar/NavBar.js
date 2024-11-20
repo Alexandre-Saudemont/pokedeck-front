@@ -8,7 +8,7 @@ import {AppBar, Toolbar, Input, Button} from '@mui/material';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import PokedexLogo from '../../asset/Pokedeck-logo.gif';
+import PokedexLogo from '../../asset/PokedeckLogo.png';
 
 function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const navigate = useNavigate();
@@ -38,7 +38,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		if (token) {
 			setIsLogged(true);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isLogged]);
 
 	function handleChange(event) {
@@ -72,13 +71,8 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 				<Toolbar id='navbar-toolbar'>
 					<div id='navbar-container-menu'>
 						{/* <Button> */}
-						<NavLink className='nav-menu' to='/'>
-							Accueil{' '}
-						</NavLink>
-						{/* </Button> */}
-						{/* <Button> */}
 						<NavLink className='nav-menu' to='/types'>
-							Types de Pokemon
+							Types
 						</NavLink>
 						{/* </Button> */}
 						{isLogged ? (
@@ -86,10 +80,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 								{/* <Button> */}
 								<NavLink className='nav-menu' to='/Deck'>
 									{' '}
-									Voir son Deck
+									Deck
 								</NavLink>
 								{/* </Button>
                                 <Button> */}
+								gg
 								<NavLink className='nav-menu' to='/Profil'>
 									{' '}
 									Votre Profil
@@ -115,7 +110,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							<>
 								{/* <Button > */}
 								<NavLink className='nav-menu' to='/Inscription'>
-									Rejoindre Pokedeck{' '}
+									Pokedeck
 								</NavLink>
 								{/* </Button> */}
 								{/* <Button sx={{ ":hover": { bgcolor: "lightblue" } }}> */}
@@ -131,9 +126,10 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							<MenuIcon className='nav-burger-icon' />
 						</Button>
 
-						<ThemeProvider theme={theme}>
+						<NavLink to='/'>
 							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
-						</ThemeProvider>
+						</NavLink>
+
 						{isActive && (
 							<Button id='nav-search-responsive'>
 								<SearchIcon className='nav-burger-icon' sx={{width: '2rem'}} onClick={handleSearchClick} />
@@ -142,11 +138,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 					</div>
 					{menuBurger && (
 						<div id='navbar-container-menu-burger'>
-							<Button onClick={handleBurger}>
-								<NavLink className='nav-menu' to='/'>
-									Accueil{' '}
-								</NavLink>
-							</Button>
+							<Button onClick={handleBurger}></Button>
 							<Button onClick={handleBurger}>
 								<NavLink className='nav-menu' to='/types'>
 									Types{' '}

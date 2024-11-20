@@ -7,13 +7,12 @@
 }
 
 .type-button {
+	display: flex;
 	cursor: pointer;
-	background-color: white;
-	width: 15rem;
-	height: 7.5rem;
 	font-size: 2rem;
 	border-radius: 1rem;
-	transition: all 0.1s ease-in;
+	align-items: center;
+	flex-direction: column;
 }
 
 .types-title {
@@ -28,70 +27,69 @@
 }
 
 .type-button-Feu {
-	background-color: #ff4422;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 
 .type-button-Acier {
-	background-color: #aaaabb;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Combat {
-	background-color: #bb5544;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Dragon {
-	background-color: #7766ee;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Eau {
-	background-color: #3399ff;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Electrik {
-	background-color: #ffbb33;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
-
 .type-button-Glace {
-	background-color: #77ddff;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Insecte {
-	background-color: #aabb22;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Normal {
-	background-color: #bbaabb;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Plante {
-	background-color: #77cc55;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Poison {
-	background-color: #aa5599;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Psy {
-	background-color: #ff5599;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Roche {
-	background-color: #bbaa66;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Sol {
-	background-color: #ddbb55;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Spectre {
-	background-color: #6666bb;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 .type-button-Vol {
-	background-color: #6699ff;
-	color: rgba(255, 255, 255, 0.876);
+	width: 7rem;
+	height: 7rem;
 }
 
 @media screen and (max-width: 500px) {
