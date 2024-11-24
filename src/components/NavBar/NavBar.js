@@ -1,14 +1,12 @@
 import {useEffect, useState} from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {PokemonRequest} from '../../requests';
-
-import './NavBar.css';
-
 import {AppBar, Toolbar, Input, Button} from '@mui/material';
-import {ThemeProvider, createTheme} from '@mui/material/styles';
+import {createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import PokedexLogo from '../../asset/PokedeckLogo.png';
+import './NavBar.css';
 
 function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const navigate = useNavigate();
@@ -29,6 +27,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		setSuccess('');
 		navigate('/');
 	}
+
+	function onClickLogin() {
+		navigate('/Connexion');
+	}
+
 	function handleSearchClick() {
 		console.log('click');
 		setSearchVisible(!searchVisible);
@@ -70,6 +73,9 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 			<AppBar>
 				<Toolbar id='navbar-toolbar'>
 					<div id='navbar-container-menu'>
+						<button className='nav-buttonLogin' onClick={onClickLogin}>
+							<img className='nav-loginIcon' src='/assets/login-icon.svg' alt='login-Icon' />
+						</button>
 						{/* <Button> */}
 						<NavLink className='nav-menu' to='/types'>
 							Types
@@ -185,8 +191,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 					)}
 					{isActive ? (
 						<div className={`nav-element-right ${searchVisible ? 'nav-search-visible' : ''}`}>
-							<Input
-								sx={{display: 'inline-flex', paddingLeft: '2rem', width: '80%'}}
+							<input
 								className='nav-search'
 								id='search'
 								type='search'

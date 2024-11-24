@@ -1,6 +1,29 @@
 /* #navbar{
     height:10vh;
 } */
+
+#navbar-container-menu {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.nav-buttonLogin {
+	border: none;
+	border-radius: 1rem;
+	background: none;
+}
+
+.nav-loginIcon {
+	width: 2.5rem;
+	height: 2.5rem;
+	color: white !important;
+}
+
+.nav-buttonLogin:hover {
+	cursor: pointer;
+	color: white !important;
+}
 .nav-menu {
 	padding: 0.5rem;
 	text-decoration: none;
@@ -44,16 +67,19 @@
     width:100%; */
 	background-color: lightcoral;
 	justify-content: space-between;
+	align-items: center;
+	display: flex;
 }
 
 .nav-search {
 	background-color: white;
+	border-radius: 1.5rem;
+	padding-left: 1rem;
+	outline: none;
+	border: none !important;
+	width: 10rem;
+	height: 2rem;
 }
-
-/* .nav-menu:hover{
-    box-sizing: border-box;
-    border-bottom: solid white .15em;
-} */
 
 .nav-menu:active {
 	text-decoration: underline;
@@ -69,16 +95,13 @@
 }
 
 .nav-pokedeck-icon {
-	width: 13rem;
+	width: 15rem;
 	transition: transform 0.5s ease-in;
 }
 .nav-pokedeck-icon:hover {
 	transform: scale(1.3);
 }
 
-.nav-element-right-empty {
-	width: 8.3vw;
-}
 #nav-burger {
 	display: none;
 }
