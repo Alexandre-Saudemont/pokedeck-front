@@ -24,6 +24,7 @@ axiosInstance.interceptors.request.use((config) => {
 
 export function PokemonRequest() {
 	const response = axiosInstance.get('/Pokemon');
+	console.log('pokemons reponse', response);
 	return response;
 }
 
@@ -77,7 +78,6 @@ export function UpdateUserRequest(id, data) {
 export function DeckRequest(id) {
 	const token = localStorage.getItem('token');
 	if (!token) {
-		// Sortie immédiate si le token est absent
 		return Promise.resolve({error: 'Token manquant'});
 	}
 	return axiosInstance.get(`/Deck/${id}`);

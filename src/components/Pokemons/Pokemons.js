@@ -7,28 +7,36 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 	const UserId = localStorage.getItem('id');
 	const token = sessionStorage.getItem('token');
 
-	const [hasClicked, setHasClicked] = useState(false); // État pour vérifier si l'utilisateur a cliqué
-	const [isAnimated, setIsAnimated] = useState(false); // Pour déclencher l'animation
+	const [hasClicked, setHasClicked] = useState(false);
+	const [isAnimated, setIsAnimated] = useState(false);
 
-	// Lorsque l'overlay est cliqué, on change l'état et on réapplique l'animation
 	const handleOverlayClick = () => {
 		setIsAnimated(true);
-
-		// Utiliser setTimeout pour réappliquer la classe après un petit délai pour forcer le redémarrage de l'animation
 		setTimeout(() => {
 			setHasClicked(true);
-		}, 2000); // Petit délai pour garantir le redémarrage de l'animation
+		}, 2000);
 	};
 
-	// useEffect(() => {
-	// 	if (hasClicked) {
-	// 		console.log('Overlay cliqué', hasClicked);
-	// 	}
-	// }, [hasClicked]);
-
 	useEffect(() => {
+		console.log('useEffect Pokemons');
+
+		// Charger les Pokémon même si l'utilisateur n'est pas connecté
+		async function requestForPokemon() {
+			console.log('Request for Pokemon');
+			try {
+				const response = await PokemonRequest();
+				console.log('Pokemon Response:', response);
+				setPokedex(response.data);
+				setIsActive(true);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
+		// Charger le deck uniquement si l'utilisateur est connecté
 		if (UserId) {
 			async function requestForDeck() {
+				console.log('Request for Deck');
 				try {
 					saveAuthorization(token);
 					const res = await DeckRequest(UserId);
@@ -40,34 +48,27 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 				}
 			}
 
-			async function requestForPokemon() {
-				try {
-					const response = await PokemonRequest();
-					setPokedex(response.data);
-					setIsActive(true);
-				} catch (error) {
-					console.error(error);
-				}
-			}
-
 			requestForDeck();
-			requestForPokemon();
 		}
+
+		// Charger les Pokémon dans tous les cas
+		requestForPokemon();
 	}, [UserId, token, setDeck, setPokedex, setIsActive]);
 
 	return (
 		<div>
-			{/* Affiche l'overlay uniquement si l'utilisateur n'a pas encore cliqué */}
 			{!hasClicked && (
 				<div className={`home-overlay ${isAnimated ? 'animate' : ''}`} onClick={handleOverlayClick}>
 					<h1 className='overlay-title'>Bienvenue sur le Pokedeck !</h1>
 				</div>
 			)}
-			{/* Affiche les Pokémons seulement après le clic */}
 
 			<div className='pokemons'>
-				{pokedex.length > 0 &&
-					pokedex?.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} isLogged={isLogged} setDeck={setDeck} deck={deck} />)}
+				{pokedex.length > 0 ? (
+					pokedex.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} isLogged={isLogged} setDeck={setDeck} deck={deck} />)
+				) : (
+					<p>Chargement des Pokémon...</p>
+				)}
 			</div>
 		</div>
 	);
