@@ -70,7 +70,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	});
 	return (
 		<nav id='navbar'>
-			<AppBar>
+			<AppBar sx={{bgcolor: 'lightcoral'}}>
 				<Toolbar id='navbar-toolbar'>
 					<div id='navbar-container-menu'>
 						<button className='nav-buttonLogin' onClick={onClickLogin}>
@@ -114,13 +114,8 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							</>
 						) : (
 							<>
-								{/* <Button > */}
-								<NavLink className='nav-menu' to='/Inscription'>
-									Pokedeck
-								</NavLink>
-								{/* </Button> */}
 								{/* <Button sx={{ ":hover": { bgcolor: "lightblue" } }}> */}
-								<NavLink className='nav-menu nav-menu-connexion' to='/Connexion'>
+								<NavLink className='nav-menu ' to='/Connexion'>
 									Connexion
 								</NavLink>
 								{/* </Button> */}

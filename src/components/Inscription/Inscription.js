@@ -67,8 +67,8 @@ function Inscription({setIsActive}) {
 	return (
 		<div className='inscription-container'>
 			<Box sx={styleBox} className='inscription-box'>
-				<h2 className='inscription-title'>Formulaire d'inscription</h2>
 				<form action='submit' onSubmit={handleSubmit}>
+					<h2 className='inscription-title'>Formulaire d'inscription</h2>
 					<InputLabel htmlFor='lastname' className='inscription-input-label'>
 						Nom
 					</InputLabel>
@@ -130,11 +130,10 @@ function Inscription({setIsActive}) {
 						placeholder='*********'
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-					<FormHelperText id='password-text'></FormHelperText>
-					<Button id='inscription-submit' type='submit'>
-						Envoyer
-					</Button>
 				</form>
+				<Button id='inscription-submit' type='submit'>
+					Envoyer
+				</Button>
 			</Box>
 		</div>
 	);

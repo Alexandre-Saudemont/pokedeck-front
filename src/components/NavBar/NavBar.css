@@ -66,9 +66,11 @@
     position:fixed;
     width:100%; */
 	background-color: lightcoral;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	display: flex;
+	width: 60%;
+	margin: auto;
 }
 
 .nav-search {

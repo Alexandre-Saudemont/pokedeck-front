@@ -1,50 +1,47 @@
 #footer {
 	color: white;
-	font-size: 0.8rem;
 	width: 100%;
 	text-align: center;
-	height: 5rem;
-}
-.footer-title {
 	background-color: #385b5f;
-	text-align: center;
-	padding-top: 10px;
+	padding: 5px 0;
+	font-size: 0.8rem;
 }
 .footer-container {
-	background-color: #385b5f;
-	text-align: center;
 	display: flex;
-	justify-content: space-around;
-}
-
-.footer-linkedin {
-	width: 1.5rem;
-}
-
-.footer-github {
-	width: 1.8rem;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	padding: 5px 0;
 }
 
 .footer-icon--container {
 	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	margin: 1rem 0 1rem 0;
+	align-items: center;
+	gap: 10px;
 }
-.css-ahj2mt-MuiTypography-root {
-	font-size: 1.5rem !important;
-	margin-top: 0.7rem !important;
+
+.footer-icon {
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	transition: transform 0.2s ease-in-out;
 }
-.css-1l0uxqq-MuiTypography-root {
-	font-size: 1.5rem !important;
+.footer-icon-linkedin {
+	transition: fill 0.2s ease-in-out;
+	width: 0.8rem;
+}
+
+.footer-icon-github {
+	transition: fill 0.2s ease-in-out;
+	width: 1rem;
+}
+.footer-icon:hover {
+	transform: scale(1.1);
 }
 
 @media (max-width: 500px) {
-	.css-ahj2mt-MuiTypography-root {
-		font-size: 1.1rem !important;
-		margin-top: 0.7rem !important;
-	}
-	.css-1l0uxqq-MuiTypography-root {
-		font-size: 0.9rem !important;
+	.footer-container {
+		flex-direction: column;
+		gap: 5px;
 	}
 }

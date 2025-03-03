@@ -87,31 +87,27 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 		}
 	}
 
-	useEffect(
-		() => {
-			async function fetchPokemonData() {
-				const typesData = await PokedexRequest();
-				const pokemonData = typesData.find((pokemon) => pokemon.id === id);
-				if (pokemonData && pokemonData.types) {
-					const typesColors = pokemonData.types.map((type) => pokemonTypeColors[type]);
-					const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`]; // Ajoute un peu de transparence à la même couleur pour le second point d'arrêt
-					const background = `linear-gradient(to left top, ${gradientColors.join(', ')})`;
+	useEffect(() => {
+		async function fetchPokemonData() {
+			const typesData = await PokedexRequest();
+			const pokemonData = typesData.find((pokemon) => pokemon.id === id);
+			if (pokemonData && pokemonData.types) {
+				const typesColors = pokemonData.types.map((type) => pokemonTypeColors[type]);
+				const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`]; // Ajoute un peu de transparence à la même couleur pour le second point d'arrêt
+				const background = `linear-gradient(to left top, ${gradientColors.join(', ')})`;
 
-					setBackgroundStyles({backgroundImage: background});
-					const textGradient = typesColors.length > 1 ? `linear-gradient(to right, ${typesColors.join(', ')})` : typesColors[0];
-					setNameStyles({
-						background: textGradient,
-						WebkitBackgroundClip: 'text',
-						WebkitTextFillColor: 'transparent',
-					});
-				}
+				setBackgroundStyles({backgroundImage: background});
+				const textGradient = typesColors.length > 1 ? `linear-gradient(to right, ${typesColors.join(', ')})` : typesColors[0];
+				setNameStyles({
+					background: textGradient,
+					WebkitBackgroundClip: 'text',
+					WebkitTextFillColor: 'transparent',
+				});
 			}
-			fetchPokemonData();
-			requestForDeck();
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[deck.length, id],
-	);
+		}
+		fetchPokemonData();
+		requestForDeck();
+	}, [deck.length, id]);
 
 	return (
 		<div className='pokemon-container'>

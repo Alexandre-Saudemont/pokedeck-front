@@ -54,13 +54,9 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 			setPassword('');
 		}
 	}
-	useEffect(
-		() => {
-			setIsActive(false);
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[],
-	);
+	useEffect(() => {
+		setIsActive(false);
+	}, []);
 
 	return (
 		<div className='connexion-container'>
@@ -94,10 +90,12 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 						<Button id='connexion-submit' type='submit'>
 							Envoyer
 						</Button>
+						<Button href='/Inscription' id='connexion-submit'>
+							S'inscrire
+						</Button>
 					</div>
 				</form>
 			</div>
-			{/* </Box> */}
 		</div>
 	);
 }

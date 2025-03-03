@@ -1,7 +1,6 @@
 .connexion-container {
 	background: url('/public/img/login calque.png') no-repeat center;
 	background-size: 100%;
-
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
@@ -18,13 +17,15 @@
 }
 
 .connexion-subcontainer {
-	height: 20rem;
-	width: 20rem;
+	height: 25rem;
+	width: 25rem;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	font-weight: 700;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 5%;
 }
 .connexion-input-label {
 	margin-top: 2rem;
@@ -49,10 +50,12 @@
 	color: #3383d2;
 	font-weight: 600 !important;
 	background-color: white !important;
+	margin: 2rem;
 }
 #connexion-submit:hover {
 	background-color: yellow !important;
 }
+
 .connexion-input {
 	color: white !important;
 }

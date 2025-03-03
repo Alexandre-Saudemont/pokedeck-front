@@ -1,6 +1,6 @@
 .inscription-container {
-	background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
-	background-size: 100%;
+	background: url('/public/img/bg-inscription.webp') no-repeat center;
+	background-size: 105%;
 	padding-top: 4.5rem;
 	display: flex;
 	justify-content: center;
@@ -10,7 +10,14 @@
 	color: white;
 }
 .inscription-box {
-	margin-left: 50%;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 5%;
+	height: 30rem;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 7%;
 }
 .inscription-title {
 	font-size: 2rem;
@@ -49,7 +56,6 @@
 
 @media (max-width: 500px) {
 	.inscription-container {
-		background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
 		background-size: cover;
 		display: flex;
 		justify-content: center;
@@ -73,7 +79,6 @@
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
 	.inscription-container {
-		background: url('/public/img/bg-inscription-2048.jpg') no-repeat center;
 		background-size: cover;
 		display: flex;
 		justify-content: center;
