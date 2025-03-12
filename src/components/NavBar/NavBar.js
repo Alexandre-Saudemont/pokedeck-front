@@ -29,7 +29,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	}
 
 	function onClickLogin() {
-		navigate('/Connexion');
+		if (isLogged) {
+			navigate('/Profil');
+		} else {
+			navigate('/Connexion');
+		}
 	}
 
 	function handleSearchClick() {
@@ -41,7 +45,7 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		if (token) {
 			setIsLogged(true);
 		}
-	}, [isLogged]);
+	}, []);
 
 	function handleChange(event) {
 		setValue(event.target.value);
@@ -64,8 +68,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	const theme = createTheme({
 		typography: {
 			fontFamily: `"Alumni Sans Collegiate One", sans-serif`,
-			// "color": `"black"`,
-			// "pl": "1rem",
 		},
 	});
 	return (
@@ -73,6 +75,9 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 			<AppBar sx={{bgcolor: 'lightcoral'}}>
 				<Toolbar id='navbar-toolbar'>
 					<div id='navbar-container-menu'>
+						<NavLink to='/'>
+							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
+						</NavLink>
 						<button className='nav-buttonLogin' onClick={onClickLogin}>
 							<img className='nav-loginIcon' src='/assets/login-icon.svg' alt='login-Icon' />
 						</button>
@@ -88,48 +93,18 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 									{' '}
 									Deck
 								</NavLink>
-								{/* </Button>
-                                <Button> */}
-								gg
-								<NavLink className='nav-menu' to='/Profil'>
-									{' '}
-									Votre Profil
+								<NavLink className='nav-menu' onClick={handleClick}>
+									Déconnexion
 								</NavLink>
-								{/* </Button> */}
-								<Button
-									className='nav-menu nav-menu-connexion'
-									sx={{
-										color: 'black',
-										':hover': {bgcolor: 'lightblue'},
-										fontWeight: 'bold',
-										fontSize: '16px',
-										lineHeight: '16px',
-										textTransform: 'none',
-									}}
-									type='button'
-									onClick={handleClick}>
-									{' '}
-									<p className='nav-menu-connexion'>Déconnexion</p>
-								</Button>
 							</>
 						) : (
-							<>
-								{/* <Button sx={{ ":hover": { bgcolor: "lightblue" } }}> */}
-								<NavLink className='nav-menu ' to='/Connexion'>
-									Connexion
-								</NavLink>
-								{/* </Button> */}
-							</>
+							<></>
 						)}
 					</div>
 					<div className='nav-pokedex'>
 						<Button onClick={handleBurger} id='nav-burger'>
 							<MenuIcon className='nav-burger-icon' />
 						</Button>
-
-						<NavLink to='/'>
-							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
-						</NavLink>
 
 						{isActive && (
 							<Button id='nav-search-responsive'>
@@ -139,12 +114,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 					</div>
 					{menuBurger && (
 						<div id='navbar-container-menu-burger'>
-							<Button onClick={handleBurger}></Button>
-							<Button onClick={handleBurger}>
-								<NavLink className='nav-menu' to='/types'>
-									Types{' '}
-								</NavLink>
-							</Button>
 							{isLogged ? (
 								<>
 									<Button onClick={handleBurger}>
@@ -170,6 +139,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 								</>
 							) : (
 								<>
+									<Button onClick={handleBurger}>
+										<NavLink className='nav-menu' to='/types'>
+											Types{' '}
+										</NavLink>
+									</Button>
 									<Button onClick={handleBurger}>
 										<NavLink className='nav-menu' to='/Inscription'>
 											Inscription

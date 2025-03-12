@@ -72,7 +72,7 @@ function Connexion({setIsLogged, setIsActive, setDeck}) {
 						type='email'
 						name='email'
 						value={email}
-						placeholder='Bulbizarre@gmail.com'
+						placeholder='Sacha@gmail.com'
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<InputLabel htmlFor='password' className='connexion-input-label'>

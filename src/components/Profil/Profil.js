@@ -48,6 +48,7 @@ function Profil({setIsLogged, setIsActive}) {
 		try {
 			saveAuthorization(token);
 			const response = await userInfosRequest(id);
+			console.log('reply', response);
 			setInfosUser(response.data);
 			setEmail(response.data.email);
 			setUsername(response.data.username);
@@ -63,6 +64,7 @@ function Profil({setIsLogged, setIsActive}) {
 			saveAuthorization(token);
 			const response = await UpdateUserRequest(id, data);
 			if (response.status === 200 && response.data.success) {
+				console.log('rep', response);
 				setInfosUser((prevState) => ({
 					...prevState,
 					email: data.email,
@@ -144,9 +146,9 @@ function Profil({setIsLogged, setIsActive}) {
 								title='Page de profil'
 							/>
 							<CardContent>
-								<Typography className='profil-infos'>Pseudo : {infosUser.username}</Typography>
-								<Typography className='profil-infos'>Prénom : {infosUser.firstname}</Typography>
 								<Typography className='profil-infos'>Nom : {infosUser.lastname}</Typography>
+								<Typography className='profil-infos'>Prénom : {infosUser.firstname}</Typography>
+								<Typography className='profil-infos'>Pseudo : {infosUser.username}</Typography>
 								<Typography className='profil-infos'>Email : {infosUser.email}</Typography>
 							</CardContent>
 							<Button className='profil-submit' onClick={handleOpen}>
@@ -160,12 +162,12 @@ function Profil({setIsLogged, setIsActive}) {
 
 					<Modal keepMounted={true} open={open} onClose={handleClose} className='profil-modal'>
 						<form className='profil-form' onSubmit={handleSubmit(onSubmit)}>
-							<InputLabel className='profil-form-edit'> Pseudo</InputLabel>
-							<Input {...register('username')} onChange={(e) => setUsername(e.target.value)} required />
-							<InputLabel className='profil-form-edit'> Prénom</InputLabel>
-							<Input {...register('firstname')} onChange={(e) => setFirstname(e.target.value)} required />
 							<InputLabel className='profil-form-edit'> Nom</InputLabel>
 							<Input {...register('lastname')} onChange={(e) => setLastname(e.target.value)} required />
+							<InputLabel className='profil-form-edit'> Prénom</InputLabel>
+							<Input {...register('firstname')} onChange={(e) => setFirstname(e.target.value)} required />
+							<InputLabel className='profil-form-edit'> Pseudo</InputLabel>
+							<Input {...register('username')} onChange={(e) => setUsername(e.target.value)} required />
 							<InputLabel className='profil-form-edit'> Email</InputLabel>
 							<Input {...register('email')} onChange={(e) => setEmail(e.target.value)} required />
 							<Button className='profil-form-edit-submit' type='submit'>

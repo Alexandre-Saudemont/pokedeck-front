@@ -43,13 +43,13 @@ export function PokemonByTypesRequest(id) {
 	return response;
 }
 
-export function RegisterRequest(username, firstname, password, email, lastname) {
+export function RegisterRequest({username, firstname, password, email, lastname}) {
 	return axiosInstance.post('/Inscription', {
-		username,
-		firstname,
-		password,
-		email,
 		lastname,
+		firstname,
+		username,
+		email,
+		password,
 	});
 }
 export function LoginRequest(email, password) {

@@ -31,20 +31,17 @@ function TypesPokemon({setIsActive, setDeck}) {
 		}
 	}
 
-	useEffect(
-		() => {
-			RequestForTypes();
-			if (UserId) {
-				requestForDeck();
-			}
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[],
-	);
+	useEffect(() => {
+		RequestForTypes();
+		if (UserId) {
+			requestForDeck();
+		}
+	}, []);
 
 	return (
 		<div id='types'>
 			<div className='types-pokemon'>{types.length > 0 && types.map((type) => <TypePokemon key={type.id} {...type} />)}</div>
+			<p className='types-copyright'>Icons by @AdeptCharon</p>
 		</div>
 	);
 }

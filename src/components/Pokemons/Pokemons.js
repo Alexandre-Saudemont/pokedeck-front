@@ -7,13 +7,17 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 	const UserId = localStorage.getItem('id');
 	const token = sessionStorage.getItem('token');
 
-	const [hasClicked, setHasClicked] = useState(false);
+	const [hasClicked, setHasClicked] = useState(() => {
+		return sessionStorage.getItem('hasClicked') === 'true';
+	});
+
 	const [isAnimated, setIsAnimated] = useState(false);
 
 	const handleOverlayClick = () => {
 		setIsAnimated(true);
 		setTimeout(() => {
 			setHasClicked(true);
+			sessionStorage.setItem('hasClicked', 'true');
 		}, 2000);
 	};
 

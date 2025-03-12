@@ -1,11 +1,9 @@
 import {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {RegisterRequest} from '../../requests';
-
-import './Inscription.css';
-
-import {FormHelperText, InputLabel, Input, Box, Button} from '@mui/material';
+import {InputLabel, Input, Box, Button} from '@mui/material';
 import Swal from 'sweetalert2';
+import './Inscription.css';
 
 function Inscription({setIsActive}) {
 	const [username, setUsername] = useState('');
@@ -26,9 +24,10 @@ function Inscription({setIsActive}) {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		console.log('Formulaire soumis !');
 		try {
 			const response = await RegisterRequest({email, password, username, lastname, firstname});
-			console.log(response.status === 201);
+			console.log('response', response.status === 201);
 			if (response.status === 200) {
 				Swal.fire({
 					icon: 'error',
@@ -37,6 +36,8 @@ function Inscription({setIsActive}) {
 			}
 
 			if (response.status === 201) {
+				console.log('Inscription réussie !');
+				console.log(username);
 				setTimeout(timeOutFunction, 3000);
 				Swal.fire({
 					text: `Bravo ${username} a bien été créé avec succès`,
@@ -88,7 +89,7 @@ function Inscription({setIsActive}) {
 						className='inscription-input'
 						id='firstname'
 						type='text'
-						name='username'
+						name='firstname'
 						value={firstname}
 						placeholder='Jean-Eude'
 						onChange={(e) => setFirstname(e.target.value)}
@@ -130,10 +131,10 @@ function Inscription({setIsActive}) {
 						placeholder='*********'
 						onChange={(e) => setPassword(e.target.value)}
 					/>
+					<Button id='inscription-submit' type='submit'>
+						Envoyer
+					</Button>
 				</form>
-				<Button id='inscription-submit' type='submit'>
-					Envoyer
-				</Button>
 			</Box>
 		</div>
 	);
