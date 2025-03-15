@@ -49,6 +49,7 @@
 	padding: 0;
 	border: white;
 	background-color: transparent;
+	margin-top: 0.9rem;
 }
 .MuiSvgIcon-root {
 	background-color: none;
@@ -77,6 +78,11 @@ h3 {
 		max-width: 10rem;
 		width: fit-content;
 		max-height: 6.5rem;
+		border-radius: 15%;
+	}
+
+	.pokemon-button {
+		margin: 0.7rem 0 0 0.3rem;
 	}
 
 	.pokemons {

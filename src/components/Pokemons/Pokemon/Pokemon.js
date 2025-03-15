@@ -1,13 +1,11 @@
 import {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-
 import {PokedexRequest, PokemonRequestByID, addPokemonToDeck, saveAuthorization, deletePokemon, DeckRequest} from '../../../requests/index.js';
-
-import './Pokemon.css';
 import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import pokemonTypeColors from '../../../constants/PokemonTypeColors.js';
 import Swal from 'sweetalert2';
+import './Pokemon.css';
 
 function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 	const navigate = useNavigate();
@@ -16,6 +14,7 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 	const [backgroundStyles, setBackgroundStyles] = useState({});
 	const [nameStyles, setNameStyles] = useState({});
 
+	// Fonction pour naviguer vers les détails du Pokémon
 	async function handleClick() {
 		const response = await PokemonRequestByID(id);
 
@@ -36,29 +35,32 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 		}
 	}
 
+	// Fonction pour ajouter un Pokémon au deck
 	async function handleAdd() {
 		try {
 			saveAuthorization(token);
-			const response = await addPokemonToDeck(UserId, {pokemon_id: id});
+			const response = await addPokemonToDeck(UserId, id);
 			if (response.status === 200 && response.data.success) {
 				const res = await DeckRequest(UserId);
 				if (res.status === 200) {
 					setDeck(res.data);
-					return Swal.fire({
+					Swal.fire({
 						icon: 'success',
 						text: `${nom} a été ajouté avec succès`,
 					});
 				}
+			} else {
+				Swal.fire({
+					icon: 'error',
+					text: response.data.error,
+				});
 			}
-			Swal.fire({
-				icon: 'error',
-				text: response.data.error,
-			});
 		} catch (error) {
 			console.error(error);
 		}
 	}
 
+	// Fonction pour supprimer un Pokémon du deck
 	async function handleDelete() {
 		try {
 			saveAuthorization(token);
@@ -66,8 +68,7 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 			if (response.status === 200) {
 				const newDeckFiltered = deck.filter((pokemon) => pokemon.id !== id);
 				setDeck(newDeckFiltered);
-				console.log(newDeckFiltered, deck);
-				return Swal.fire({
+				Swal.fire({
 					icon: 'success',
 					text: `${nom} supprimé avec succès`,
 				});
@@ -77,16 +78,34 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 		}
 	}
 
+	// Fonction pour récupérer le deck
 	async function requestForDeck() {
-		if (UserId) {
+		if (!UserId || !token) {
+			console.error('UserId ou token manquant');
+			return;
+		}
+
+		try {
 			saveAuthorization(token);
 			const res = await DeckRequest(UserId);
 			if (res.status === 200) {
 				setDeck(res.data);
 			}
+		} catch (error) {
+			console.error('Erreur lors de la requête :', error);
 		}
 	}
 
+	// useEffect pour déclencher requestForDeck lorsque isLogged change
+	useEffect(() => {
+		if (isLogged && UserId && token) {
+			requestForDeck();
+		} else {
+			setDeck([]); // Réinitialisez le deck si l'utilisateur est déconnecté
+		}
+	}, [isLogged]); // Déclenchez l'effet lorsque isLogged change
+
+	// useEffect pour styliser le Pokémon
 	useEffect(() => {
 		async function fetchPokemonData() {
 			const typesData = await PokedexRequest();
@@ -95,7 +114,6 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 				const typesColors = pokemonData.types.map((type) => pokemonTypeColors[type]);
 				const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`];
 				const background = `linear-gradient(to left top, ${gradientColors.join(', ')})`;
-
 				setBackgroundStyles({backgroundImage: background});
 				const textGradient = typesColors.length > 1 ? `linear-gradient(to right, ${typesColors.join(', ')})` : typesColors[0];
 				setNameStyles({
@@ -106,8 +124,7 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 			}
 		}
 		fetchPokemonData();
-		requestForDeck();
-	}, [deck.length, id]);
+	}, [id]);
 
 	return (
 		<div className='pokemon-container'>
@@ -117,7 +134,6 @@ function Pokemon({nom, url, id, isLogged, setDeck, deck}) {
 					{nom}
 				</h1>
 
-				{/* Est que mon state isLogged est vide ou plein ? Si il est rempli, alors j'ai un utilisateur connecté et j'affiche le bouton  */}
 				{isLogged && (
 					<div className='pokemon-button'>
 						{deck && deck.some((pokemon) => pokemon.id === id) ? (

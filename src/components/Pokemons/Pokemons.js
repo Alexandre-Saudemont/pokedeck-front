@@ -22,14 +22,10 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 	};
 
 	useEffect(() => {
-		console.log('useEffect Pokemons');
-
 		// Charger les Pokémon même si l'utilisateur n'est pas connecté
 		async function requestForPokemon() {
-			console.log('Request for Pokemon');
 			try {
 				const response = await PokemonRequest();
-				console.log('Pokemon Response:', response);
 				setPokedex(response.data);
 				setIsActive(true);
 			} catch (error) {
@@ -40,7 +36,6 @@ function Pokemons({setPokedex, pokedex, isLogged, setIsActive, deck, setDeck}) {
 		// Charger le deck uniquement si l'utilisateur est connecté
 		if (UserId) {
 			async function requestForDeck() {
-				console.log('Request for Deck');
 				try {
 					saveAuthorization(token);
 					const res = await DeckRequest(UserId);

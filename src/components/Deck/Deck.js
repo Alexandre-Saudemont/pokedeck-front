@@ -15,16 +15,25 @@ function Deck({setIsActive, setDeck, deck, id}) {
 		fontWeight: '700',
 		marginTop: '1rem',
 		marginBottom: '1rem',
+		background: 'white',
 		'&:hover': {
-			backgroundColor: 'lightgrey',
-			color: 'green',
+			backgroundColor: 'yellow',
 		},
 	};
 
 	async function RequestForDeck() {
+		const userId = localStorage.getItem('id');
+		const token = sessionStorage.getItem('token');
+
+		if (!userId || !token) {
+			console.error('Utilisateur non connecté ou token manquant');
+			return;
+		}
+
 		try {
 			saveAuthorization(token);
 			const response = await DeckRequest(userId);
+
 			if (response.status === 200) {
 				setDeck(response.data);
 			}
@@ -93,15 +102,34 @@ function Deck({setIsActive, setDeck, deck, id}) {
 	}
 
 	useEffect(() => {
+		const userId = localStorage.getItem('id');
+		const token = sessionStorage.getItem('token');
+
+		if (userId && token) {
+			RequestForDeck();
+		} else {
+			setDeck([]); // Réinitialisez le deck si l'utilisateur est déconnecté
+		}
+	}, [userId, token]); // Déclenchez l'effet lorsque l'ID utilisateur ou le token change
+
+	useEffect(() => {
 		async function fetchPokemonData() {
 			const typesData = await PokedexRequest();
 			setPokemonData(typesData);
 		}
-		fetchPokemonData();
-		RequestForDeck();
+
+		const userId = localStorage.getItem('id');
+		const token = sessionStorage.getItem('token');
+
+		if (userId && token) {
+			fetchPokemonData();
+			RequestForDeck();
+		} else {
+			setDeck([]); // Réinitialisez le deck si l'utilisateur est déconnecté
+		}
+
 		setIsActive(false);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [deck.length]);
+	}, [deck.length, userId, token]); // Déclenchez l'effet lorsque l'ID utilisateur, le token ou la longueur du deck change
 
 	return (
 		<div id='deck'>
@@ -126,7 +154,7 @@ function Deck({setIsActive, setDeck, deck, id}) {
 					deck.map((pokemon) => {
 						const pokemonInfo = pokemonData.find((p) => p.id === pokemon.id);
 						const typesColors = pokemonInfo && pokemonInfo.types ? pokemonInfo.types.map((type) => pokemonTypeColors[type]) : ['#FFFFFF'];
-						const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`]; // Ajoute un peu de transparence à la même couleur pour le second point d'arrêt
+						const gradientColors = typesColors.length > 1 ? typesColors : [typesColors[0], `${typesColors[0]}88`];
 						const background = `linear-gradient(to left top, ${gradientColors.join(', ')})`;
 
 						return (

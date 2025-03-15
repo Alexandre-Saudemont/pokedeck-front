@@ -24,7 +24,6 @@ axiosInstance.interceptors.request.use((config) => {
 
 export function PokemonRequest() {
 	const response = axiosInstance.get('/Pokemon');
-	console.log('pokemons reponse', response);
 	return response;
 }
 
@@ -52,12 +51,22 @@ export function RegisterRequest({username, firstname, password, email, lastname}
 		password,
 	});
 }
-export function LoginRequest(email, password) {
-	const response = axiosInstance.post('/Connexion', {
-		email: email,
-		password: password,
-	});
-	return response;
+export async function LoginRequest(email, password) {
+	try {
+		const response = axiosInstance.post('/Connexion', {
+			email: email,
+			password: password,
+		});
+
+		if (response.status === 200) {
+			sessionStorage.setItem('token', response.data.token);
+			localStorage.setItem('id', response.data.id);
+		}
+		return response;
+	} catch (error) {
+		console.error('Erreur lors de la connexion:', error);
+		return error;
+	}
 }
 
 export function userInfosRequest(id) {
@@ -76,13 +85,9 @@ export function UpdateUserRequest(id, data) {
 }
 
 export function DeckRequest(id) {
-	const token = localStorage.getItem('token');
-	if (!token) {
-		return Promise.resolve({error: 'Token manquant'});
-	}
-	return axiosInstance.get(`/Deck/${id}`);
+	const response = axiosInstance.get(`/Deck/${id}`);
+	return response;
 }
-
 export function saveAuthorization(token) {
 	axiosInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
@@ -92,8 +97,8 @@ export function UserDeleteRequest(id) {
 	return response;
 }
 
-export function addPokemonToDeck(id, pokemon_id) {
-	const response = axiosInstance.post(`/Deck/${id}`, pokemon_id);
+export function addPokemonToDeck(UserId, pokemon_id) {
+	const response = axiosInstance.post(`/Deck/${UserId}`, {pokemon_id});
 	return response;
 }
 
@@ -106,3 +111,5 @@ export function deleteAllPokemons(id) {
 	const response = axiosInstance.delete(`/Deck/AllPokemons/${id}`);
 	return response;
 }
+
+export default axiosInstance;

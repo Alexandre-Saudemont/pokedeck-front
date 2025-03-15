@@ -48,7 +48,7 @@ function Profil({setIsLogged, setIsActive}) {
 		try {
 			saveAuthorization(token);
 			const response = await userInfosRequest(id);
-			console.log('reply', response);
+
 			setInfosUser(response.data);
 			setEmail(response.data.email);
 			setUsername(response.data.username);

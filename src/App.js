@@ -10,6 +10,7 @@ import Navbar from './components/NavBar/NavBar.js';
 import Deck from './components/Deck/Deck';
 import Profil from './components/Profil/Profil';
 import Footer from './components/Footer/Footer';
+import axios from 'axios';
 
 import './App.css';
 
@@ -20,11 +21,22 @@ function App() {
 	const [pokedex, setPokedex] = useState([]);
 	const [isActive, setIsActive] = useState(false);
 
-	useEffect(() => {}, []);
+	useEffect(() => {
+		if (!isLogged) {
+			setDeck([]);
+		}
+	}, []);
 
 	return (
 		<div className='App'>
-			<Navbar setSuccess={setSuccess} isLogged={isLogged} setIsLogged={setIsLogged} setPokedex={setPokedex} isActive={isActive} />
+			<Navbar
+				setSuccess={setSuccess}
+				isLogged={isLogged}
+				setIsLogged={setIsLogged}
+				setPokedex={setPokedex}
+				isActive={isActive}
+				setDeck={setDeck}
+			/>
 			<Routes>
 				<Route
 					path='/'

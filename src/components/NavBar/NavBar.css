@@ -176,12 +176,14 @@
 		padding: 3% 10% 0 0;
 		transform: scale(1.6);
 	}
+
 	.nav-element-right {
 		display: none;
 	}
+
 	#navbar-toolbar {
 		flex-direction: column;
-		width: 100%;
+		width: 95%;
 		gap: 0;
 		padding-right: 1rem;
 	}
@@ -195,6 +197,7 @@
 	}
 	#navbar-container-menu-burger {
 		display: block;
+		display: flex;
 	}
 	.nav-element-right.nav-search-visible {
 		display: flex;
@@ -256,6 +259,7 @@
 		align-items: center;
 		margin-bottom: 1rem;
 	}
+
 	.nav-menu {
 		font-size: 1.2rem;
 	}

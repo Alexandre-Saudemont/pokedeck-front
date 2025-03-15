@@ -6,9 +6,10 @@ import {createTheme} from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import PokedexLogo from '../../asset/PokedeckLogo.png';
+
 import './NavBar.css';
 
-function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
+function Navbar({isLogged, setIsLogged, setPokedex, setSuccess, isActive}) {
 	const navigate = useNavigate();
 	const token = sessionStorage.getItem('token');
 	const [value, setValue] = useState('');
@@ -19,7 +20,13 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 		setMenuBurger(!menuBurger);
 	}
 
-	function handleClick() {
+	async function handleLogout() {
+		const userId = localStorage.getItem('id');
+		console.log('User ID:', userId);
+		if (!userId) {
+			console.error('UserId manquant');
+			return;
+		}
 		sessionStorage.removeItem('token');
 		localStorage.removeItem('id');
 		localStorage.removeItem('deck');
@@ -37,7 +44,6 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 	}
 
 	function handleSearchClick() {
-		console.log('click');
 		setSearchVisible(!searchVisible);
 	}
 
@@ -90,12 +96,11 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							<>
 								{/* <Button> */}
 								<NavLink className='nav-menu' to='/Deck'>
-									{' '}
 									Deck
 								</NavLink>
-								<NavLink className='nav-menu' onClick={handleClick}>
+								<Button className='nav-menu' onClick={handleLogout}>
 									Déconnexion
-								</NavLink>
+								</Button>
 							</>
 						) : (
 							<></>
@@ -117,13 +122,17 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 							{isLogged ? (
 								<>
 									<Button onClick={handleBurger}>
+										<NavLink className='nav-menu' to='/'>
+											Accueil
+										</NavLink>
+									</Button>
+									<Button onClick={handleBurger}>
 										<NavLink className='nav-menu' to='/Deck'>
 											Deck
 										</NavLink>
 									</Button>
 									<Button onClick={handleBurger}>
 										<NavLink className='nav-menu' to='/Profil'>
-											{' '}
 											Profil
 										</NavLink>
 									</Button>
@@ -133,28 +142,29 @@ function Navbar({isLogged, setIsLogged, setSuccess, setPokedex, isActive}) {
 										}}
 										className='nav-menu-disconnect-button'
 										type='button'
-										onClick={handleClick}>
+										onClick={handleLogout}>
 										Déconnexion
 									</Button>
 								</>
 							) : (
-								<>
+								<div className='navbar-containter-notLogged'>
+									<Button sx={{':hover': {bgcolor: 'lightblue'}}} onClick={handleBurger}>
+										<NavLink className='nav-menu ' to='/'>
+											Accueil
+										</NavLink>
+									</Button>
 									<Button onClick={handleBurger}>
 										<NavLink className='nav-menu' to='/types'>
 											Types{' '}
 										</NavLink>
 									</Button>
-									<Button onClick={handleBurger}>
-										<NavLink className='nav-menu' to='/Inscription'>
-											Inscription
-										</NavLink>
-									</Button>
+
 									<Button sx={{':hover': {bgcolor: 'lightblue'}}} onClick={handleBurger}>
 										<NavLink className='nav-menu ' to='/Connexion'>
 											Connexion
 										</NavLink>
 									</Button>
-								</>
+								</div>
 							)}
 						</div>
 					)}

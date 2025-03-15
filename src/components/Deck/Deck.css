@@ -43,10 +43,19 @@
 	height: fit-content;
 	border: black 1px solid;
 	border-radius: 1rem;
-	margin: 1em 5em 1em 5em;
-	background-color: lightcoral;
+	margin: 1em 3em 1em 3em;
+
 	padding: 1rem;
 	image-rendering: auto;
+	transition: transform 0.5s ease-in;
+}
+
+.deck-pokemon-img {
+	transition: transform 0.5s ease-in;
+	width: 70%;
+}
+.deck-pokemon-img:hover {
+	transform: scale(1.1);
 }
 
 .deck-pokemon-nom {
