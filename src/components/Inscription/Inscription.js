@@ -24,10 +24,10 @@ function Inscription({setIsActive}) {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		console.log('Formulaire soumis !');
+
 		try {
 			const response = await RegisterRequest({email, password, username, lastname, firstname});
-			console.log('response', response.status === 201);
+
 			if (response.status === 200) {
 				Swal.fire({
 					icon: 'error',
@@ -36,8 +36,6 @@ function Inscription({setIsActive}) {
 			}
 
 			if (response.status === 201) {
-				console.log('Inscription réussie !');
-				console.log(username);
 				setTimeout(timeOutFunction, 3000);
 				Swal.fire({
 					text: `Bravo ${username} a bien été créé avec succès`,

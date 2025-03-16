@@ -97,9 +97,15 @@ export function UserDeleteRequest(id) {
 	return response;
 }
 
-export function addPokemonToDeck(UserId, pokemon_id) {
-	const response = axiosInstance.post(`/Deck/${UserId}`, {pokemon_id});
-	return response;
+export async function addPokemonToDeck(UserId, pokemon_id) {
+	try {
+		const response = await axiosInstance.post(`/Deck/${UserId}`, {pokemon_id});
+
+		return response;
+	} catch (error) {
+		console.error(error);
+		throw error;
+	}
 }
 
 export function deletePokemon(id, pokemon_id) {

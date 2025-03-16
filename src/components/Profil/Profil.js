@@ -92,34 +92,37 @@ function Profil({setIsLogged, setIsActive}) {
 			title: 'Êtes-vous sûr de vouloir supprimer votre compte ?',
 			showCancelButton: true,
 			showCloseButton: true,
-			confirmButtonText: 'Oui, je suis sur',
+			confirmButtonText: 'Oui, je suis sûr',
 			cancelButtonText: 'Non, annuler',
-		})
-			.then(async (result) => {
-				if (result.isConfirmed) {
+		}).then(async (result) => {
+			if (result.isConfirmed) {
+				try {
 					saveAuthorization(token);
 					const response = await UserDeleteRequest(id);
-					if (response.status === 201) {
+
+					if (response.status === 200) {
 						localStorage.removeItem('id');
 						sessionStorage.removeItem('token');
 						setIsLogged(false);
-						setTimeout(timeOutFunction, 2000);
+
 						Swal.fire({
 							icon: 'success',
 							text: 'Compte supprimé avec succès',
 							timer: 2000,
 							timerProgressBar: true,
 							showConfirmButton: false,
+						}).then(() => {
+							navigate('/');
 						});
 					}
+				} catch (error) {
+					Swal.fire({
+						icon: 'error',
+						text: error.response?.data?.error || 'Une erreur est survenue',
+					});
 				}
-			})
-			.catch((error) => {
-				Swal.fire({
-					icon: 'error',
-					text: `${error.response.data.error}`,
-				});
-			});
+			}
+		});
 	}
 
 	useEffect(() => {

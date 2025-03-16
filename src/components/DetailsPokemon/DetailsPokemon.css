@@ -1,7 +1,7 @@
 #detail {
 	flex-grow: 1;
 	padding-top: 7rem;
-	background: url('../../../public/img/type-bg.jpg') no-repeat center;
+	background: url('../../../public/img/type-bg.webp') no-repeat center;
 	background-size: 100%;
 	display: flex;
 	justify-content: center;
@@ -37,7 +37,7 @@
 
 @media screen and (max-width: 500px) {
 	#detail {
-		background: url('../../../public/img/type-bg.jpg') no-repeat center;
+		background: url('../../../public/img/type-bg.webp') no-repeat center;
 		background-size: cover;
 	}
 	.detail-container {
@@ -76,7 +76,7 @@
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
 	#detail {
-		background: url('../../../public/img/type-bg.jpg') no-repeat center;
+		background: url('../../../public/img/type-bg.webp') no-repeat center;
 		background-size: cover;
 	}
 	.detail-container {

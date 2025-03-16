@@ -98,9 +98,9 @@ function Navbar({isLogged, setIsLogged, setPokedex, setSuccess, isActive}) {
 								<NavLink className='nav-menu' to='/Deck'>
 									Deck
 								</NavLink>
-								<Button className='nav-menu' onClick={handleLogout}>
+								<NavLink className='nav-menu' onClick={handleLogout}>
 									Déconnexion
-								</Button>
+								</NavLink>
 							</>
 						) : (
 							<></>

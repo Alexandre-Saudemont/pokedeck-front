@@ -1,5 +1,5 @@
 .connexion-container {
-	background: url('/public/img/login calque.png') no-repeat center;
+	background: url('/public/img/login calque.webp') no-repeat center;
 	background-size: 100%;
 	flex-grow: 1;
 	display: flex;
@@ -62,7 +62,7 @@
 
 @media screen and (max-width: 500px) {
 	.connexion-container {
-		background: url('/public/img/login.jpg') no-repeat center;
+		background: url('/public/img/login calque.webp') no-repeat center;
 		background-size: cover;
 
 		justify-content: center;
@@ -101,7 +101,7 @@
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
 	.connexion-container {
-		background: url('/public/img/login.jpg') no-repeat center;
+		background: url('/public/img/login calque.webp') no-repeat center;
 		background-size: cover;
 
 		justify-content: center;

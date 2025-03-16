@@ -32,7 +32,10 @@ function DetailsType({isLogged, deck, setDeck}) {
 	async function handleAdd(e) {
 		try {
 			saveAuthorization(token);
-			const response = await addPokemonToDeck(UserId, {pokemon_id: e.target.value});
+			const pokemonId = e.target.value;
+
+			const response = await addPokemonToDeck(UserId, pokemonId); // Utiliser l'id du pokemon ici
+
 			if (response.status === 200 && response.data.success) {
 				const res = await DeckRequest(UserId);
 				if (res.status === 200) {
@@ -43,6 +46,7 @@ function DetailsType({isLogged, deck, setDeck}) {
 					});
 				}
 			}
+
 			Swal.fire({
 				icon: 'error',
 				text: response.data.error,
@@ -73,8 +77,7 @@ function DetailsType({isLogged, deck, setDeck}) {
 		if (UserId) {
 			requestForDeck();
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [deck]);
+	}, [UserId]);
 
 	const getTypeBackgroundStyle = (types) => {
 		const typesColors = types.map((type) => pokemonTypeColors[type]);
