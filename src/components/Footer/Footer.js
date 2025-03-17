@@ -16,9 +16,9 @@ function Footer() {
 						<img src={github} alt='GitHub icon' className='footer-icon-github' />
 					</a>
 				</div>
+				<Typography sx={{fontSize: '1rem', paddingTop: '2px'}}>© 2025 Pokedeck. Tous droits réservés.</Typography>
+				<Typography sx={{fontSize: '1rem', paddingTop: '2px'}}>Les pokémons et leurs noms sont déposés par Nintendo</Typography>
 			</div>
-			<Typography sx={{fontSize: '1rem', paddingTop: '5px'}}>© 2025 Pokedeck. Tous droits réservés.</Typography>
-			<Typography sx={{fontSize: '1rem', paddingTop: '5px'}}>Les pokémons et leurs noms sont déposés par Nintendo</Typography>
 		</div>
 	);
 }

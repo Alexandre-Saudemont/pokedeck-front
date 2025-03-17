@@ -130,6 +130,9 @@ function Navbar({isLogged, setIsLogged, setPokedex, setSuccess, isActive}) {
 										<NavLink className='nav-menu' to='/Deck'>
 											Deck
 										</NavLink>
+										<NavLink className='nav-menu' to='/types'>
+											Types
+										</NavLink>
 									</Button>
 									<Button onClick={handleBurger}>
 										<NavLink className='nav-menu' to='/Profil'>

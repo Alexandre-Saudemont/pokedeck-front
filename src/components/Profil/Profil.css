@@ -115,6 +115,7 @@
 	}
 
 	.profil-card {
+		width: 20rem;
 		align-items: center;
 		justify-content: center;
 		color: white !important;
@@ -122,5 +123,10 @@
 		display: flex;
 		flex-direction: column;
 		box-shadow: none !important;
+		background: rgba(0, 0, 0, 0.7) !important;
+	}
+
+	.profil-infos {
+		font-size: 1.2rem !important;
 	}
 }

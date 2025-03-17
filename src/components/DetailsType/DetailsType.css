@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 500px) {
 	.detail-type {
-		margin-top: 5rem;
+		margin-top: 8rem;
 	}
 	.detail-type-container {
 		background: rgba(212, 61, 61, 0.6);
@@ -83,7 +83,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: 2rem 2rem 0 2rem !important;
+		margin: 1rem 2rem 1rem 2rem !important;
 	}
 	.detail-type-name {
 		font-size: 2rem !important;
@@ -101,7 +101,9 @@
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
 	.detail-type {
-		margin-top: 3rem;
+		margin-top: 5rem;
+		display: flex;
+		justify-content: space-around;
 	}
 	.detail-type-container {
 		background: rgba(212, 61, 61, 0.6);

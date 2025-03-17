@@ -196,8 +196,11 @@
 		height: 2rem;
 	}
 	#navbar-container-menu-burger {
-		display: block;
 		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-around;
+		margin-right: 5%;
 	}
 	.nav-element-right.nav-search-visible {
 		display: flex;
@@ -215,12 +218,19 @@
 }
 
 @media screen and (min-width: 501px) and (max-width: 1024px) {
+	#navbar-toolbar {
+		flex-direction: column;
+		width: 95%;
+		gap: 0;
+		padding-right: 1rem;
+	}
 	#nav-burger {
 		display: inline;
 		transform: scale(1.5);
-		margin-top: 3%;
+		margin-top: 2%;
 		width: 1rem;
 	}
+
 	#navbar-container-menu {
 		display: none;
 	}
@@ -231,17 +241,15 @@
 		display: inline-grid;
 		transform: scale(1.6);
 		padding: 0.3rem 0 0 0.8rem;
-		width: 100%;
 	}
 	.nav-element-right {
 		display: none;
 	}
-	#navbar-toolbar {
-		flex-direction: column;
-	}
+
 	.nav-pokedex {
 		display: flex;
-		justify-content: space-evenly;
+
+		width: 100%;
 	}
 
 	.nav-logo {
@@ -270,5 +278,11 @@
 	/* Icon Menu burger */
 	.nav-burger-icon {
 		fill: black !important;
+	}
+
+	.nav-search {
+		width: 60%;
+		padding-left: 1rem;
+		font-size: 1rem;
 	}
 }
