@@ -16,7 +16,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	padding-top: 1%;
+	padding-top: 0.8rem;
 	padding-right: 2%;
 }
 
@@ -125,7 +125,7 @@
 	right: 0;
 	position: absolute;
 	padding-right: 8%;
-	padding-top: 1.1%;
+	padding-top: 0.9rem;
 }
 /* 
 @media (max-width: 500px) {
