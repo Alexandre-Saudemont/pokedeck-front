@@ -84,9 +84,7 @@ function Navbar({isLogged, setIsLogged, setPokedex, setSuccess, isActive}) {
 						<NavLink to='/'>
 							<img src={PokedexLogo} alt='Pokedex Logo' className='nav-pokedeck-icon' />
 						</NavLink>
-						<button className='nav-buttonLogin' onClick={onClickLogin}>
-							<img className='nav-loginIcon' src='/assets/login-icon.svg' alt='login-Icon' />
-						</button>
+
 						{/* <Button> */}
 						<NavLink className='nav-menu' to='/types'>
 							Types
@@ -171,17 +169,22 @@ function Navbar({isLogged, setIsLogged, setPokedex, setSuccess, isActive}) {
 							)}
 						</div>
 					)}
+					<button className='nav-buttonLogin' onClick={onClickLogin}>
+						<img className='nav-loginIcon' src='/assets/login-icon.svg' alt='login-Icon' />
+					</button>
 					{isActive ? (
-						<div className={`nav-element-right ${searchVisible ? 'nav-search-visible' : ''}`}>
-							<input
-								className='nav-search'
-								id='search'
-								type='search'
-								value={value}
-								onChange={handleChange}
-								placeholder='Rechercher...'
-							/>
-						</div>
+						<>
+							<div className={`nav-element-right ${searchVisible ? 'nav-search-visible' : ''}`}>
+								<input
+									className='nav-search'
+									id='search'
+									type='search'
+									value={value}
+									onChange={handleChange}
+									placeholder='Rechercher...'
+								/>
+							</div>
+						</>
 					) : (
 						<div className='nav-element-right-empty'></div>
 					)}

@@ -13,6 +13,11 @@
 	border: none;
 	border-radius: 1rem;
 	background: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding-top: 1%;
+	padding-right: 2%;
 }
 
 .nav-loginIcon {
@@ -66,11 +71,10 @@
     position:fixed;
     width:100%; */
 	background-color: lightcoral;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	display: flex;
-	width: 60%;
-	margin: auto;
+
 	gap: 15px;
 }
 
@@ -114,6 +118,14 @@
 
 #navbar-container-menu-burger {
 	display: none;
+}
+
+.nav-element-right {
+	top: 0;
+	right: 0;
+	position: absolute;
+	padding-right: 8%;
+	padding-top: 1.1%;
 }
 /* 
 @media (max-width: 500px) {
