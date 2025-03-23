@@ -185,7 +185,8 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		padding: 3% 10% 0 0;
+		margin-top: 1rem;
+		margin-right: 3.5rem;
 		transform: scale(1.6);
 	}
 
@@ -216,12 +217,10 @@
 	}
 	.nav-element-right.nav-search-visible {
 		display: flex;
-		width: 50%;
-		height: 100%;
+		margin-right: 8.5rem;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 1rem;
-		padding-right: 1rem;
 	}
 	/* Icon Menu burger */
 	.nav-burger-icon {
@@ -251,8 +250,12 @@
 	} */
 	#nav-search-responsive {
 		display: inline-grid;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-top: 1rem;
+		margin-right: 3.5rem;
 		transform: scale(1.6);
-		padding: 0.3rem 0 0 0.8rem;
 	}
 	.nav-element-right {
 		display: none;
@@ -273,8 +276,7 @@
 	}
 	.nav-element-right.nav-search-visible {
 		display: flex;
-		width: 50%;
-		height: 100%;
+		margin-right: 5rem;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 1rem;
